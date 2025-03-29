@@ -1,0 +1,91 @@
+## Telebort Parent-Teacher Day Report
+
+### Student Summary
+**Student Name:** s10154@telebort.me
+
+**Program & Class Time:** Sunday 10am Program AI-2
+
+**Instructor Name:** Han Yang (Primary), with contributions from Choy Yein, Yong Sheng, and Fatiha
+
+**Class Mode:** Online
+
+**Attendance:** 31/37 sessions (84%)
+
+
+### Learning Progress Table
+
+| Week | Session | Lesson Title | Submission Link/Score | Exit Ticket Score | Progress Rating |
+|------|---------|-------------|------------------------|------------------|-----------------|
+| Week of 30/03/2025 | - | No Class (Hari Raya Holiday) | - | - | ☆☆☆☆☆ |
+| Week of 23/03/2025 | 4 | L4: Advanced Model Mechanisms: Attention & Output Generation | COMPLETED | - | ★★★☆☆ |
+| Week of 16/03/2025 | 3 | L3: Word Representations – Embeddings & Neural Networks | COMPLETED | - | ★★★☆☆ |
+| Week of 09/03/2025 | 2 | L2: Data, Training, and Bias in AI | COMPLETED | - | ★★★☆☆ |
+| Week of 02/03/2025 | 1 | L1: Introduction to Generative AI & Core Concepts | COMPLETED | - | ★★★☆☆ |
+| Week of 23/02/2025 | 22 | L24: Graduation | COMPLETED | - | ★★★★★ |
+| Week of 16/02/2024 | 21 | L23: Final Project Presentation | COMPLETED | - | ★★★☆☆ |
+| Week of 09/02/2025 | - | No class | - | - | ☆☆☆☆☆ |
+| Week of 02/02/2025 | 20 | L22: Final Project Prototype | COMPLETED | - | ☆☆☆☆☆ |
+| Week of 19/01/2024 | 19 | L21: Final Project Proposal PART 2 | COMPLETED | - | ★★★☆☆ |
+| Week of 12/01/2024 | 18 | L20: FInal Project Proposal PART 1 | COMPLETED | - | ★★★☆☆ |
+| Week of 22/12/2024 | 17 | L20: FInal Project Proposal | IN PROGRESS | - | ★★★☆☆ |
+| Week of 15/12/2024 | 16 | L19: Quiz 2 | 76% | - | ★★★☆☆ |
+| Week of 08/12/2024 | 16 | L18: Deep Learning & Image Classification | COMPLETED | L18 ET: 3/3, 2/3 | ★★★☆☆ |
+| Week of 01/12/2024 | 15 | L17: Custom Object Detection with YOLOv8 | COMPLETED | L17 ET: 5/5 | ★★★☆☆ |
+| Week of 24/11/2024 | 14 | L16: Object Detection with YOLOv8 | COMPLETED | L16 ET: 3/5 | ★★★☆☆ |
+| Week of 17/11/2024 | 13 | L15: Face Detection with Haar Cascades | COMPLETED | - | ★★★☆☆ |
+| Week of 10/11/2024 | - | Absent | - | - | ☆☆☆☆☆ |
+| Week of 03/11/2024 | 12 | L13: Computer Vision | COMPLETED | ET CV: 2/2, ET OpenCV: 2/3 | ★★★☆☆ |
+| Week of 27/10/2024 | 11 | L12: Quiz 1 | 72/100 | - | ★★★☆☆ |
+| Week of 20/10/2024 | 10 | L11: Streamlit | COMPLETED | ET: 3/5 | ★★★☆☆ |
+| Week of 13/10/2024 | 9 | L11: Streamlit | IN PROGRESS | - | ★★★☆☆ |
+| Week of 06/10/2024 | - | No class | - | - | ☆☆☆☆☆ |
+| Week of 29/09/2024 | 8 | P4 Chatbox | COMPLETED | ET: 4/5 | ★★★☆☆ |
+| Week of 15/09/2024 | 7 | S8 Exercise 1, Exercise 2 | COMPLETED | ET 1: 3/3, ET 2: 3/3 | ★★★★☆ |
+| Week of 08/09/2024 | 6 | P3: Mall Customer Segmentation | COMPLETED | L8 ET: 4/5 | ★★★☆☆ |
+| Week of 01/09/2024 | - | Off | - | - | ☆☆☆☆☆ |
+| Week of 25/08/2024 | 5 | L6: Project 2 - Titanic Survivors Classification | COMPLETED | L6 ET: 5/5 | ★★★☆☆ |
+| Week of 18/08/2024 | - | Absent | - | - | ☆☆☆☆☆ |
+| Week of 11/08/2024 | 4 | L4: Regression | COMPLETED | L4: Regression ET: 3/3, L4: Project ET: 2/3 | ★★★☆☆ |
+| Week of 04/08/2024 | 3 | L3: Machine Learning Process + Data Preparation | COMPLETED | L3: Machine Learning Process ET: 3/3, L3: Data Preparation ET: 5/5 | ★★★☆☆ |
+| Week of 28/07/2024 | 2 | S2 L2: Machine Learning + Supervised & Unsupervised Learning | COMPLETED | L2: Machine Learning ET: 2/3, L2: Supervised & Unsupervised ET: 2/3 | ★★★★☆ |
+| Week of 21/07/2024 | 1 | S1 L1: Introduction to AI | COMPLETED | L1: ET: 4/5 | ★★★★☆ |
+
+### Skill Growth & Behavior
+
+**Technical skills:**
+* Developed a strong foundation in Artificial Intelligence, covering both theoretical concepts and practical applications.
+* Explored various topics including Generative AI, Word Embeddings, Neural Networks, Data Bias, Deep Learning, Computer Vision, Object Detection (YOLOv8, Haar Cascades), Streamlit, Machine Learning (Regression, Classification, Clustering), and Supervised/Unsupervised Learning.
+* Completed multiple projects and exercises, including a Chatbox, Mall Customer Segmentation, Titanic Survivors Classification, and made progress on the Final Project.
+* Achieved good scores in quizzes (72/100 and 76%).
+* Demonstrated proficiency in using tools like Colab Notebooks, Teachable Machine, and Figma.
+
+**Soft skills:**
+* Maintains consistent attendance (84%) and actively engages in the learning process.
+* Shows persistence in working through technical challenges, as seen with Streamlit installation issues.
+* Demonstrates ability to apply complex concepts across different AI domains.
+
+**Challenges:**
+* Initial struggles with installing Streamlit.
+* Final Project Prototype received a lower rating.
+* Some exit ticket scores in certain modules like Streamlit (3/5) and Object Detection (3/5) suggest room for improvement in these areas.
+
+### Teacher Feedback
+
+The student has been a highly engaged and proactive learner in the AI-2 program. They have demonstrated a strong understanding of a wide range of AI concepts and have successfully completed numerous projects and exercises. Their consistent attendance and active participation are commendable. They have shown great initiative in exploring different AI domains, from machine learning fundamentals to computer vision and generative AI. While there were some challenges with certain tools and concepts, their persistence and dedication have allowed them to overcome these obstacles and achieve graduation from the program.
+
+### Suggestions for Parents
+
+* Encourage the student to continue working on their AI skills, perhaps through personal projects that align with their interests.
+* Review the concepts related to Streamlit and object detection to strengthen their understanding in these areas.
+* Support their interest in Generative AI concepts, which they have recently begun exploring.
+* Consider exploring advanced AI concepts or tools that build upon their strong foundation.
+* Celebrate their graduation from the program and their consistent effort throughout.
+
+### Next Steps / Parent Actions
+
+* [ ] Review this report with the student and acknowledge their excellent progress and dedication to the AI program.
+* [ ] Discuss their favorite aspects of the program and areas where they might want to deepen their knowledge.
+* [ ] Explore potential AI-related resources or follow-up courses to maintain their momentum and interest.
+* [ ] Consider how they might apply their AI knowledge to real-world problems or projects of personal interest.
+
+---

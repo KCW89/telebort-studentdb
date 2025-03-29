@@ -1,0 +1,63 @@
+## Telebort Parent-Teacher Day Report
+
+### Student Summary
+**Student Name:** s10767@telebort.me
+
+**Program & Class Time:** Sunday 4.30pm Program C
+
+**Instructor Name:** Soumiya
+
+**Class Mode:** Online - Glitch
+
+**Attendance:** 12/14 sessions (86%)
+
+
+### Learning Progress Table
+
+| Week             | Session | Lesson Title                                                                                                                                                                                            | Submission Link/Score | Exit Ticket Score                                                                                                                            | Progress Rating |
+| --------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
+| Week of 30/03/2025 | -       | No Class (Hari Raya Holiday)                                                                                                                                                                          | -                      | -                                                                                                                                              | ☆☆☆☆☆         |
+| Week of 23/03/2025 | 1       | Hack the HTML, Mini Project 1, Code the CSS, Project My Superhero, My Dinner Activity, Project My Holiday                                                                                               | -                      | L4 Intro to CSS ET: -, L5 CSS Selector ET: -, L6 HTML Content Division + CSS Box Model ET: -, L7 (CSS Display + Flexbox) ET: -                     | ★★★★★         |
+| Week of 16/03/2025 | -       | No Class                                                                                                                                                                                              | -                      | -                                                                                                                                              | ☆☆☆☆☆         |
+| Week of 09/03/2025 | 11      | Project Scientific Calculator                                                                                                                                                                       | -                      | L22 Quiz 2 Revision : 6/11, L23 Quiz 2 : 80/100                                                                                                 | ★★★★★         |
+| Week of 02/03/2025 | 10      | L20 Exercise 1, L20 Exercise 2, L20 Exercise 3 (Adv)                                                                                                                                                 | -                      | -                                                                                                                                              | ★★★★☆         |
+| Week of 23/02/2025 | 9       | L19 My Quiz Game Adv                                                                                                                                                                                | -                      | -                                                                                                                                              | ★★★★☆         |
+| Week of 16/02/2025 | 8       | L15 My Picasso Art, L18 My Quiz Game                                                                                                                                                                | -                      | -                                                                                                                                              | ★★★★☆         |
+| Week of 09/02/2025 | 7       | L12 Loops EX 1, L12 Loops EX 2, L12 Loops EX 3, L14 Project Racing Turtles (Part 2)                                                                                                                   | -                      | -                                                                                                                                              | ★★★★☆         |
+| Week of 02/02/2025 | 6       | Functions Extra Ex 1, Functions Extra Ex 2, Functions Extra Ex 3, Functions Ex 3                                                                                                                      | -                      | N/A                                                                                                                                            | ★★★★☆         |
+| Week of 19/01/2025 | 5       | Quiz 1, Functions Ex 1, Functions Ex 2, Functions Ex 3                                                                                                                                               | -                      | -                                                                                                                                              | ★★★★☆         |
+| Week of 12/01/2025 | 4       | -                                                                                                                                                                                                   | -                      | 76/100                                                                                                                                         | ★★★★☆         |
+| Week of 05/01/2025 | 3       | -                                                                                                                                                                                                   | -                      | -                                                                                                                                              | ★★★★★         |
+| Week of 22/12/2024 | 2       | -                                                                                                                                                                                                   | -                      | -                                                                                                                                              | ★★★★☆         |
+| Week of 15/12/2024 | 1       | -                                                                                                                                                                                                   | -                      | -                                                                                                                                              | ★★★★★         |
+
+### Skill Growth & Behavior
+
+**Technical skills:**
+* Completed a wide range of lessons from basic HTML and CSS to more advanced Python concepts like functions, loops, and math modules.
+* Successfully completed projects like "My Quiz Game", "My Picasso Art", "Racing Turtles", "Nutritious Meal", and "Scientific Calculator".
+* Demonstrated good progress in quizzes, especially Quiz 2.
+
+**Soft skills:**
+* Consistently attends the sessions and shows a strong drive to complete the curriculum.
+
+**Challenges:**
+* Exit ticket scores for the initial HTML/CSS lessons are missing.
+
+### Teacher Feedback
+
+The student is highly motivated and fast-learning, having made remarkable progress through a significant portion of the curriculum. They consistently complete projects and demonstrate a strong understanding of the concepts. Their enthusiasm for learning is evident in consistent participation and completion of a wide array of topics.
+
+### Suggestions for Parents
+
+* Encourage the student to continue their excellent momentum and explore more advanced topics in web development and Python.
+* Review the concepts covered in the initial HTML/CSS lessons to ensure a solid foundation.
+* Support their learning by providing resources and opportunities for further exploration in coding.
+
+### Next Steps / Parent Actions
+
+* [ ] Review this report with the student.
+* [ ] Acknowledge their impressive progress and encourage them to maintain their enthusiasm for learning.
+* [ ] Discuss their interests for future learning paths in technology.
+
+---

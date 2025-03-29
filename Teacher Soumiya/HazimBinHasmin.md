@@ -1,0 +1,69 @@
+## Telebort Parent-Teacher Day Report
+
+### Student Summary
+**Student Name:** s10237@telebort.me
+
+**Program & Class Time:** Saturday 2:00pm Program G
+
+**Instructor Name:** Soumiya
+
+**Class Mode:** Online - Colab Notebook
+
+**Attendance:** 16/22 sessions (73%)
+
+
+### Learning Progress Table
+
+| Week             | Session | Lesson Title                                                                                                                                                           | Submission Link/Score | Exit Ticket Score                                                                   | Progress Rating |
+| --------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- | ----------------------------------------------------------------------------------- | --------------- |
+| Week of 29/03/2025 | -       | No Class (Hari Raya Holiday)                                                                                                                                        | -                      | -                                                                                   | ☆☆☆☆☆         |
+| Week of 22/03/2025 | 15      | P5: Face Detector, L15 Face Detection with Haar Cascades                                                                                                            | L15 Face Detection with Haar Cascades: COMPLETED | L15 Haar Cascade Classifier: -                                                    | ★★★★☆         |
+| Week of 15/03/2025 | 14      | OpenCV with Python, L13 OpenCV with Python                                                                                                                            | L13 OpenCV with Python: COMPLETED | OpenCV with Python ET: 3/3                                                           | ★★★★☆         |
+| Week of 08/03/2025 | 13      | Computer Vision, OpenCV with Python, L13 Computer Vision                                                                                                             | L13 Computer Vision: COMPLETED, L13 OpenCV with Python: IN PROGRESS | Computer Vision ET: 2/2                                                            | ★★★★☆         |
+| Week of 01/03/2025 | 12      | L12 Quiz 1                                                                                                                                                          | L12 Quiz 1: COMPLETED  | L12 Quiz 1: 60/100                                                                  | ★★★★☆         |
+| Week of 22/02/2025 | 11      | Stremlit, L11 Stremlit                                                                                                                                              | L11 Stremlit: COMPLETED | L11 Stremlit ET: -                                                                  | ★★★☆☆         |
+| Week of 08/02/2025 | -       | No Class                                                                                                                                                             | -                      | -                                                                                   | ☆☆☆☆☆         |
+| Week of 08/02/2025 | 10      | Text Processing, P4: Chatbot, L9 Text Processing, L10 P4 Chatbot                                                                                                     | L9 Text Processing: COMPLETED, L10 P4 Chatbot: COMPLETED | L9 Text Processing ET: 3/3, L10 P4 Chatbot ET: 2/5                                | ★★★★☆         |
+| Week of 01/02/2025 | 9       | Text Processing, L9 Natural Language Processing                                                                                                                     | L9 Natural Language Processing: 8/8, L9 Text Processing: IN PROGRESS | L9 Natural Language Processing ET: 3/3, L9 Text Processing ET: HW                    | ★★★★☆         |
+| Week of 18/01/2025 | 8       | Project 3 Mall Customer Segmentation, L8 Project 3 Mall Customer Segmentation                                                                                         | L8 Project 3 Mall Customer Segmentation: COMPLETED | L8 Project 3 ET: -                                                                  | ★★★☆☆         |
+| Week of 11/01/2025 | 7       | Project 1 Instagram Reach Analysis, L4 Project 1 Instagram Reach Analysis                                                                                             | L4 Project 1 Instagram Reach Analysis: COMPLETED | L4 Project 1 ET: 2/3                                                                  | ★★★★☆         |
+| Week of 04/01/2025 | 6       | Clustering, L7 Clustering                                                                                                                                           | L7 Clustering: COMPLETED | L7 Clustering ET: 2/5                                                                  | ★★★★☆         |
+| Week of 21/12/2024 | 5       | Colab Notebook, L6 Project 2 Titanic Survivors Classification                                                                                                       | L6 Project 2 Titanic Survivors Classification: COMPLETED | L6 Project 2 ET: 3/5                                                                  | ★★★★★         |
+| Week of 14/12/2024 | 4       | Colab Notebook, L5 Classification                                                                                                                                   | L5 Classification: COMPLETED | L5 Classification ET: 2/5                                                                  | ★★★★☆         |
+| Week of 07/12/2024 | 3       | Colab Notebook, L4 Exercise Regression, L4 Project 1 Instagram Reach Analysis (IN PROGRESS)                                                                        | L4 Exercise Regression: COMPLETED | L4 Regression ET: 2/3, L4 Project 1 ET: -                                          | ★★★☆☆         |
+| Week of 30/11/2024 | -       | No Class                                                                                                                                                             | -                      | -                                                                                   | ☆☆☆☆☆         |
+| Week of 23/11/2024 | -       | Exercise Submission, Colab Notebook, L3 Machine Learning Process, L3 Data Preparation                                                                               | L3 Machine Learning Process: 5/7 | Machine Learning Process ET: 3/3, Data Preparation ET: 5/5                          | ☆☆☆☆☆         |
+| Week of 16/11/2024 | 2       | Exercise Submission, LESSON 2 Introduction to Machine Learning Part 1 & 2, Supervised & Unsupervised Learning                                                         | Ex: 5/10               | Introduction to Machine Learning ET: 3/3, Supervised & Unsupervised Learning ET: 2/3 | ★★★☆☆         |
+| Week of 09/11/2024 | 1       | Lesson 1: Introduction of AI, Explore AI Around Us                                                                                                                | Explore AI Around Us: COMPLETED | ET: 4/5                                                                              | ★★★★★         |
+
+### Skill Growth & Behavior
+
+**Technical skills:**
+* Demonstrated proficiency in Computer Vision and OpenCV.
+* Completed projects involving Face Detection and Image Processing.
+* Showed understanding of Natural Language Processing and Streamlit.
+
+**Soft skills:**
+* Actively participates in the majority of the sessions.
+* Shows enthusiasm for exploring new concepts.
+
+**Challenges:**
+* Has been late to a few sessions recently.
+
+### Teacher Feedback
+
+Hazim is a dedicated and engaged student who consistently completes his assignments and actively participates in class. His work in Computer Vision is particularly noteworthy. We encourage him to aim for punctuality in all future sessions.
+
+### Suggestions for Parents
+
+* Encourage the student to focus on completing the OpenCV and Image Processing exercises.
+* Provide additional support for understanding complex Computer Vision concepts.
+* Maintain the current level of engagement in class activities.
+
+### Next Steps / Parent Actions
+
+* [ ] Review this report with the student.
+* [ ] Discuss strategies for completing ongoing tasks.
+* [ ] Support their interest in Computer Vision and AI.
+
+---
