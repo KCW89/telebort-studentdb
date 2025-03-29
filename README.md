@@ -16,7 +16,7 @@ Please follow these simple steps to view your child's report:
 
 3. **Access Your Child's Report**  
    Click on the email ID number associated with your child. This link will directly lead to your child's report.  
-   *(Example: If your child's email is s01234@telebort.me, then your file is identified as s01234)*
+   *(Example: If your child's email is s01234@telebort.me, then your file is identified as **s01234**)*
 
 ### Preparing for Our Discussion
 
@@ -30,6 +30,11 @@ Thank you for your cooperation and continued support of your child's educational
 
 ---
 
-*This announcement was prepared by:*  
-Fatin | Norita | Puvin  
-**Telebort Academy**
+*This Report was prepared by:*  
+Fatin  : http://www.linkedin.com/in/fatinnajihah18
+
+Norita : http://www.linkedin.com/in/mnnrita03
+
+Puvin  : http://www.linkedin.com/in/puvinthana
+
+Team Telebort Academy 🧡
