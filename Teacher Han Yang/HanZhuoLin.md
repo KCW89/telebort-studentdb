@@ -1,0 +1,86 @@
+## Telebort Parent-Teacher Day Report
+
+### Student Summary
+**Student Name:** s10166@telebort.me
+
+**Program & Class Time:** Sunday 4pm Program AI-1
+
+**Instructor Name:** Han Yang
+
+**Class Mode:** Online
+
+**Attendance:** 20/29 sessions (69%)
+
+
+### Learning Progress Table
+
+| Week | Session | Lesson Title | Submission Link/Score | Exit Ticket Score | Progress Rating |
+|------|---------|-------------|------------------------|------------------|-----------------|
+| Week of 30/03/2025 | - | No Class (Hari Raya Holiday) | - | - | ☆☆☆☆☆ |
+| Week of 23/03/2025 | - | Absent | - | - | ★★★☆☆ |
+| Week of 16/03/2025 | 1 | L1: Introduction to AI | COMPLETED | - | ★★★☆☆ |
+| Week of 09/03/2025 | - | No class | - | - | ★★★☆☆ |
+| Week of 02/03/2025 | - | No class | - | - | ★★★☆☆ |
+| Week of 22/02/2025 | 38 | L23: Final Project setup+Data Cleaning+Data Analysis presentation, L24: Graduation | https://drive.google.com/drive/folders/1aESENbucj4XTM4Mg9So9C-oUh8aJOsmD?usp=drive_link | - | ★★★☆☆ |
+| Week of 16/02/2024 | 37 | L23: Final Project setup+Data Cleaning+Data Analysis | IN PROGRESS | - | ★★★☆☆ |
+| Week of 09/02/2025 | - | No class | - | - | ☆☆☆☆☆ |
+| Week of 02/02/2025 | 36 | L23: Final Project setup+Data Cleaning+Data Analysis | IN PROGRESS | - | ★★★☆☆ |
+| Week of 19/01/2024 | 35 | L23: Final Project setup+Data Cleaning+Data Analysis | IN PROGRESS | - | ★★★☆☆ |
+| Week of 12/01/2024 | - | Absent | - | - | ★★★☆☆ |
+| Week of 22/12/2024 | 34 | L23: Final Project setup+Data Cleaning+Data Analysis | IN PROGRESS | - | ★★★☆☆ |
+| Week of 15/12/2024 | 33 | L22: Final Project setup+Data Cleaning+Data Analysis | IN PROGRESS | - | ★★★☆☆ |
+| Week of 08/12/2024 | 32 | L21: Final Project setup+Data Cleaning+Data Analysis | IN PROGRESS | - | ★★★☆☆ |
+| Week of 01/12/2024 | - | Absent | - | - | ★★★☆☆ |
+| Week of 24/11/2024 | 31 | S29: L20 Quiz 2 | 70% | - | ★★★☆☆ |
+| Week of 17/11/2024 | 30 | L19: P4 Google play store analysis | COMPLETED | - | ★★★☆☆ |
+| Week of 10/11/2024 | 29 | L19: P4 Google play store analysis | COMPLETED | - | ★★★☆☆ |
+| Week of 03/11/2024 | - | Absent | - | - | ★★★☆☆ |
+| Week of 27/10/2024 | 28 | L19: P4 Google play store analysis | COMPLETED | - | ★★★☆☆ |
+| Week of 20/10/2024 | 27 | L18: Project 4: Google Play Store | COMPLETED | - | ★★★☆☆ |
+| Week of 13/10/2024 | 25 | L18: Project 4: Google Play Store | COMPLETED | - | ★★★☆☆ |
+| Week of 06/10/2024 | - | Absent | - | - | ☆☆☆☆☆ |
+| Week of 29/09/2024 | - | Absent | - | - | ☆☆☆☆☆ |
+| Week of 15/09/2024 | - | Absent | - | - | ☆☆☆☆☆ |
+| Week of 08/09/2024 | 25 | L17: Data Interpretation and Report Making | COMPLETED | L17 ET: 3/5 | ★★★☆☆ |
+| Week of 01/09/2024 | 24 | L16: Data Grouping and Data Joining with Pandas | COMPLETED | L16 ET: 2/5 | ★★★☆☆ |
+
+### Skill Growth & Behavior
+
+**Technical skills:**
+* Demonstrated understanding of data analysis fundamentals including data cleaning, interpretation, and report making.
+* Successfully completed the Google Play Store project, showing ability to apply data analysis concepts to real-world datasets.
+* Developed skills in pandas for data manipulation, grouping, and joining.
+* Progressed through a comprehensive final project involving data setup, cleaning, and analysis.
+* Recently completed an introduction to AI, suggesting the beginning of a new learning phase.
+
+**Soft skills:**
+* Shows good engagement during attended sessions.
+* Demonstrates persistence in working on the final project over multiple sessions.
+* Successfully completed project presentation and graduation requirements.
+
+**Challenges:**
+* Attendance has been inconsistent (69%), with several absences throughout the program.
+* Exit ticket scores (3/5 and 2/5) suggest room for improvement in understanding key concepts.
+* Quiz 2 score (70%) indicates reasonable but not exceptional comprehension of the material.
+* Final project required numerous sessions to complete, indicating potential challenges with the complexity of the work.
+
+### Teacher Feedback
+
+The student has shown potential in data analysis and AI concepts when present in class. Their completion of the Google Play Store project and perseverance with the final project demonstrate their capability to work with complex datasets. While their quiz performance was satisfactory, there's room for improvement in mastering fundamental concepts. Their graduation suggests they have met the basic requirements of the program, but more consistent attendance would likely have enhanced their learning experience and depth of understanding.
+
+### Suggestions for Parents
+
+* Encourage more regular attendance to maximize learning benefits from future programs.
+* Review data analysis concepts together, particularly focusing on areas covered in exit tickets where scores were lower.
+* Consider supplementary learning resources to reinforce concepts taught in class, especially in data manipulation with pandas.
+* Discuss any scheduling conflicts that might be impacting attendance and explore possible solutions.
+* Support continued exploration of AI concepts following the recent introduction to the topic.
+
+### Next Steps / Parent Actions
+
+* [ ] Review this report with the student and acknowledge their completion of the program and graduation.
+* [ ] Discuss the importance of consistent attendance for optimal learning outcomes in future courses.
+* [ ] Explore their interest in continuing with AI studies following their introduction to the topic.
+* [ ] Identify any challenges they faced with the data analysis projects and how these might be addressed in future learning.
+
+---
