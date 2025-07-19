@@ -1,0 +1,21 @@
+# VS Code temporary files
+tempCodeRunnerFile.py
+*.tmp
+*.temp
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db 
