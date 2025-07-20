@@ -3,7 +3,7 @@ import numpy as np
 
 def modify_attendance_values(file_path):
     """
-    Modify "Attended" and "Late" values in attendance columns to match teacher values
+    Modify "Attended", "New Program Attended", and "Late" values in attendance columns to match teacher values
     """
     print("=" * 70)
     print("MODIFYING ATTENDANCE VALUES")
@@ -34,7 +34,7 @@ def modify_attendance_values(file_path):
     
     # Track changes
     changes_made = 0
-    changes_by_type = {'Attended': 0, 'Late': 0}
+    changes_by_type = {'Attended': 0, 'New Program Attended': 0, 'Late': 0}
     
     print(f"\n" + "=" * 70)
     print("PROCESSING CHANGES")
@@ -54,8 +54,8 @@ def modify_attendance_values(file_path):
                 attendance_value = row.iloc[attendance_pos]
                 teacher_value = row.iloc[teacher_pos]
                 
-                # Check if attendance value is "Attended" or "Late"
-                if pd.notna(attendance_value) and str(attendance_value).strip() in ['Attended', 'Late']:
+                # Check if attendance value is "Attended" or "Late" or "New Program Attended"
+                if pd.notna(attendance_value) and str(attendance_value).strip() in ['Attended', 'Late', 'New Program Attended']:
                     # Check if teacher value exists and is not empty
                     if pd.notna(teacher_value) and str(teacher_value).strip() not in ['', '-', 'nan']:
                         # Make the change
@@ -107,7 +107,7 @@ def modify_attendance_values(file_path):
                 original_str = str(original_value).strip()
                 modified_str = str(modified_value).strip()
                 
-                if original_str in ['Attended', 'Late'] and original_str != modified_str:
+                if original_str in ['Attended', 'Late', 'New Program Attended'] and original_str != modified_str:
                     print(f"  Row {row_idx + 1}, Session {col_idx + 1}: '{original_str}' → '{modified_str}'")
                     sample_count += 1
     
