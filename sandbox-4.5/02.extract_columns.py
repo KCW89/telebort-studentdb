@@ -4,11 +4,11 @@ import numpy as np
 print("=== EXTRACTING SPECIFIC COLUMNS ===")
 
 # Read the original CSV
-df = pd.read_csv("sandbox-4.5/prosessing-1st-row/sandbox.csv")
+df = pd.read_csv("sandbox-4.5/sandbox.csv")
 print(f"Original shape: {df.shape}")
 
 # Define the 6 columns we want to extract
-# Mapping from CurrentSandbox.csv columns to new columns
+# Mapping from sandbox.csv columns to new columns
 column_mapping = {
     'Date': 'Date',
     'Session': 'Session', 
@@ -69,7 +69,7 @@ print("\n=== EXTRACTED DATA PREVIEW ===")
 print(new_df.head(10))
 
 # Save the new CSV
-output_file = "sandbox-4.5/prosessing-1st-row/2.extracted-row1.csv"
+output_file = "sandbox-4.5/02.extracted-row1.csv"
 new_df.to_csv(output_file, index=False)
 print(f"\nNew CSV saved as: {output_file}")
 
