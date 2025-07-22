@@ -111,5 +111,5 @@ def analyze_all_extractions(file_path):
     }
 
 if __name__ == "__main__":
-    csv_file = "sandbox-4.5/prosessing-1st-row/4.all-extractions.csv"
+    csv_file = "sandbox-4.5/04.all-extractions.csv"
     result = analyze_all_extractions(csv_file)

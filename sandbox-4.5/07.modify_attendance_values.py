@@ -25,9 +25,12 @@ def modify_attendance_values(file_path):
     print(f"Attendance columns: {len(attendance_positions)}")
     print(f"Teacher columns: {len(teacher_positions)}")
     
-    # Read data with pandas
+    # Read data with pandas (this will add suffixes to duplicate columns)
     df = pd.read_csv(file_path)
     print(f"Total rows: {len(df)}")
+    
+    # Rename columns back to original names to remove the suffixes
+    df.columns = raw_columns
     
     # Create a copy of the dataframe to modify
     df_modified = df.copy()
@@ -79,7 +82,7 @@ def modify_attendance_values(file_path):
         print(f"  {change_type}: {count} changes")
     
     # Save the modified file
-    output_file = 'sandbox-4.5/prosessing-1st-row/7.modified_attendance_values.csv'
+    output_file = 'sandbox-4.5/07.modified_attendance_values.csv'
     df_modified.to_csv(output_file, index=False)
     print(f"\n✓ Modified file saved as: {output_file}")
     
@@ -118,7 +121,7 @@ def modify_attendance_values(file_path):
     }
 
 if __name__ == "__main__":
-    csv_file = "sandbox-4.5/prosessing-1st-row/4.all-extractions.csv"
+    csv_file = "sandbox-4.5/04.all-extractions.csv"
     result = modify_attendance_values(csv_file)
     
     print("\n" + "=" * 70)

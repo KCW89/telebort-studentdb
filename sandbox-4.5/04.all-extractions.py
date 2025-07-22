@@ -4,7 +4,7 @@ import numpy as np
 print("=== CREATING WIDE FORMAT CSV FOR ALL ROWS ===")
 
 # Read the original CSV
-df = pd.read_csv("sandbox-4.5/prosessing-1st-row/sandbox.csv")
+df = pd.read_csv("sandbox-4.5/oldsandbox.csv")
 print(f"Original shape: {df.shape}")
 
 # Define the 6 columns we want to extract
@@ -68,7 +68,7 @@ for i, col in enumerate(column_names[:12]):
     print(f"  Column {i}: {col}")
 
 # Save the wide format CSV
-output_file = "sandbox-4.5/prosessing-1st-row/4.all-extractions.csv"
+output_file = "sandbox-4.5/04.all-extractions.csv"
 wide_df.to_csv(output_file, index=False)
 print(f"\nWide format CSV saved as: {output_file}")
 
