@@ -4,7 +4,7 @@ import numpy as np
 print("=== CREATING WIDE FORMAT CSV ===")
 
 # Read the original CSV
-df = pd.read_csv("sandbox-4.5/prosessing-1st-row/sandbox.csv")
+df = pd.read_csv("sandbox-4.5/oldsandbox.csv")
 print(f"Original shape: {df.shape}")
 
 # Get the first row data
@@ -53,7 +53,7 @@ for i, col in enumerate(column_names[:12]):
     print(f"  Column {i}: {col}")
 
 # Save the wide format CSV
-output_file = "sandbox-4.5/prosessing-1st-row/3.extracted-row1-6cols-wide.csv"
+output_file = "sandbox-4.5/03.extracted-row1-6cols-wide.csv"
 wide_df.to_csv(output_file, index=False)
 print(f"\nWide format CSV saved as: {output_file}")
 
@@ -68,9 +68,3 @@ expected_weeks = len(first_row) // 8
 actual_weeks = len(wide_data) // 6
 print(f"Expected weeks: {expected_weeks}")
 print(f"Actual weeks: {actual_weeks}")
-
-print("\n=== SUMMARY ===")
-print(f"✅ Created wide format with shape: {wide_df.shape}")
-print(f"✅ 6 columns repeated {actual_weeks} times")
-print(f"✅ Total columns: {len(wide_df.columns)}")
-print(f"✅ Maintains same structure as original CurrentSandbox.csv") 

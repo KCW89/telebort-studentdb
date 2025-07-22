@@ -96,7 +96,7 @@ def locate_columns(file_path):
     }
 
 if __name__ == "__main__":
-    csv_file = "sandbox-4.5/prosessing-1st-row/3.extracted-row1-6cols-wide.csv"
+    csv_file = "sandbox-4.5/03.extracted-row1-6cols-wide.csv"
     result = locate_columns(csv_file)
     
     print("\n" + "=" * 50)

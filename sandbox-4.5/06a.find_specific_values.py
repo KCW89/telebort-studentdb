@@ -107,7 +107,7 @@ def find_specific_values(file_path):
     }
 
 if __name__ == "__main__":
-    csv_file = "sandbox-4.5/prosessing-1st-row/4.all-extractions.csv"
+    csv_file = "sandbox-4.5/04.all-extractions.csv"
     result = find_specific_values(csv_file)
     
     print("\n" + "=" * 70)

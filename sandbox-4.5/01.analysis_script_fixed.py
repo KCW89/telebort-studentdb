@@ -24,7 +24,7 @@ def read_csv_with_encoding(file_path):
 
 # Read the CSV file with encoding handling
 print("=== CSV ANALYSIS WITH ENCODING FIX ===")
-df = read_csv_with_encoding("sandbox-4.5/prosessing-1st-row/sandbox.csv")
+df = read_csv_with_encoding("sandbox-4.5/sandbox.csv")
 
 if df is not None:
     print(f"\nShape: {df.shape}")
