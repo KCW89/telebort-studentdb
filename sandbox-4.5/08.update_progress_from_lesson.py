@@ -4,6 +4,7 @@ import re
 def update_progress_from_lesson(file_path):
     """
     Scan Lesson column values for progress indicators and update Progress columns
+    Also replace empty stars (☆☆☆☆☆) with dash (-)
     """
     print("=" * 70)
     print("UPDATING PROGRESS FROM LESSON COLUMNS")
@@ -25,16 +26,19 @@ def update_progress_from_lesson(file_path):
     print(f"Lesson columns: {len(lesson_positions)}")
     print(f"Progress columns: {len(progress_positions)}")
     
-    # Read data with pandas
+    # Read data with pandas (this will add suffixes to duplicate columns)
     df = pd.read_csv(file_path)
     print(f"Total rows: {len(df)}")
+    
+    # Rename columns back to original names to remove the suffixes
+    df.columns = raw_columns
     
     # Create a copy of the dataframe to modify
     df_modified = df.copy()
     
     # Track changes
     changes_made = 0
-    changes_by_type = {'In Progress': 0, 'Completed': 0}
+    changes_by_type = {'In Progress': 0, 'Completed': 0, 'Stars to Dash': 0}
     
     # Progress detection patterns
     progress_patterns = {
@@ -42,25 +46,44 @@ def update_progress_from_lesson(file_path):
             r'\bIN PROGRESS\b',
             r'\bIn Progress\b', 
             r'\bin progress\b',
+            r'\bIN PROGRESSED\b',
+            r'\bIn Progressed\b',
+            r'\bin progressed\b',
+            r'\bONGOING\b',
+            r'\bOngoing\b',
+            r'\bongoing\b',
             r'\bDOING\b',
             r'\bDoing\b',
             r'\bdoing\b',
             r'\bNOT STARTED\b',
             r'\bNot Started\b',
             r'\bnot started\b',
-            r'\bIN PROGRESS\b',
-            r'\bIN PROGRESS\b'
+            r'\bINCOMPLETE\b',
+            r'\bIncomplete\b',
+            r'\bincomplete\b',
+            r'\bNOT DONE\b',
+            r'\bNot Done\b',
+            r'\bnot done\b',
+            r'\bPENDING\b',
+            r'\bPending\b',
+            r'\bpending\b'
         ],
         'Completed': [
             r'\bCOMPLETED\b',
             r'\bCompleted\b',
             r'\bcompleted\b',
+            r'\bCOMPLETE\b',
+            r'\bComplete\b',
+            r'\bcomplete\b',
             r'\bDONE\b',
             r'\bDone\b',
             r'\bdone\b',
             r'\bFINISHED\b',
             r'\bFinished\b',
-            r'\bfinished\b'
+            r'\bfinished\b',
+            r'\bACCOMPLISHED\b',
+            r'\bAccomplished\b',
+            r'\baccomplished\b'
         ]
     }
     
@@ -118,10 +141,40 @@ def update_progress_from_lesson(file_path):
                             print(f"    Progress: '{old_value}' → '{new_value}'")
                             print()
     
+    # Now process all Progress columns to replace empty stars with dash
+    print(f"\n" + "=" * 70)
+    print("REPLACING EMPTY STARS WITH DASH")
+    print("=" * 70)
+    
+    star_changes = 0
+    for row_idx in range(len(df_modified)):
+        row = df_modified.iloc[row_idx]
+        
+        for col_idx, col_name in enumerate(df_modified.columns):
+            if col_name == 'Progress':
+                cell_value = row.iloc[col_idx]
+                
+                # Check if cell value exists and contains empty stars
+                if pd.notna(cell_value) and str(cell_value).strip() not in ['', '-', 'nan']:
+                    cell_str = str(cell_value).strip()
+                    
+                    # Check for empty stars pattern (☆☆☆☆☆)
+                    if re.match(r'^☆+$', cell_str):
+                        old_value = cell_str
+                        new_value = '-'
+                        
+                        df_modified.iloc[row_idx, col_idx] = new_value
+                        star_changes += 1
+                        changes_by_type['Stars to Dash'] += 1
+                        
+                        # Show first few star changes for verification
+                        if star_changes <= 10:
+                            print(f"  Row {row_idx + 1}, Progress col {col_idx}: '{old_value}' → '{new_value}'")
+    
     print(f"\n" + "=" * 70)
     print("CHANGE SUMMARY")
     print("=" * 70)
-    print(f"Total changes made: {changes_made}")
+    print(f"Total changes made: {changes_made + star_changes}")
     print(f"Changes by type:")
     for change_type, count in changes_by_type.items():
         print(f"  {change_type}: {count} changes")
@@ -131,44 +184,8 @@ def update_progress_from_lesson(file_path):
     df_modified.to_csv(output_file, index=False)
     print(f"\n✓ Modified file saved as: {output_file}")
     
-    # Show sample of changes
-    print(f"\n" + "=" * 70)
-    print("SAMPLE OF CHANGES (First 10)")
-    print("=" * 70)
-    
-    sample_count = 0
-    for row_idx in range(len(df)):
-        if sample_count >= 10:
-            break
-            
-        row_original = df.iloc[row_idx]
-        row_modified = df_modified.iloc[row_idx]
-        
-        for col_idx, lesson_pos in enumerate(lesson_positions):
-            if sample_count >= 10:
-                break
-                
-            progress_pos = lesson_pos + 3
-            
-            if progress_pos < len(row_original):
-                original_progress = row_original.iloc[progress_pos]
-                modified_progress = row_modified.iloc[progress_pos]
-                lesson_value = row_original.iloc[lesson_pos]
-                
-                if pd.notna(original_progress) and pd.notna(modified_progress):
-                    original_str = str(original_progress).strip()
-                    modified_str = str(modified_progress).strip()
-                    lesson_str = str(lesson_value).strip() if pd.notna(lesson_value) else ''
-                    
-                    if original_str != modified_str:
-                        print(f"  Row {row_idx + 1}, Session {col_idx + 1}:")
-                        print(f"    Lesson: '{lesson_str[:60]}...'")
-                        print(f"    Progress: '{original_str}' → '{modified_str}'")
-                        print()
-                        sample_count += 1
-    
     return {
-        'total_changes': changes_made,
+        'total_changes': changes_made + star_changes,
         'changes_by_type': changes_by_type,
         'output_file': output_file
     }
