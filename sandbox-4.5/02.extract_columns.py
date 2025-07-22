@@ -4,7 +4,7 @@ import numpy as np
 print("=== EXTRACTING SPECIFIC COLUMNS ===")
 
 # Read the original CSV
-df = pd.read_csv("sandbox-4.5/sandbox.csv")
+df = pd.read_csv("sandbox-4.5/oldsandbox.csv")
 print(f"Original shape: {df.shape}")
 
 # Define the 6 columns we want to extract

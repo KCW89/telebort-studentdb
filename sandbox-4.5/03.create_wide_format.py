@@ -4,7 +4,7 @@ import numpy as np
 print("=== CREATING WIDE FORMAT CSV ===")
 
 # Read the original CSV
-df = pd.read_csv("sandbox-4.5/sandbox.csv")
+df = pd.read_csv("sandbox-4.5/oldsandbox.csv")
 print(f"Original shape: {df.shape}")
 
 # Get the first row data
