@@ -5,6 +5,7 @@ def update_progress_from_lesson(file_path):
     """
     Scan Lesson column values for progress indicators and update Progress columns
     Also replace empty stars (☆☆☆☆☆) with dash (-)
+    Also replace all stars when attendance is "No Class", "Absent", or "PH"
     """
     print("=" * 70)
     print("UPDATING PROGRESS FROM LESSON COLUMNS")
@@ -19,12 +20,14 @@ def update_progress_from_lesson(file_path):
     print(f"File: {file_path}")
     print(f"Total columns: {len(raw_columns)}")
     
-    # Find lesson and progress column positions
+    # Find lesson, progress, and attendance column positions
     lesson_positions = [i for i, col in enumerate(raw_columns) if col == 'Lesson']
     progress_positions = [i for i, col in enumerate(raw_columns) if col == 'Progress']
+    attendance_positions = [i for i, col in enumerate(raw_columns) if col == 'Attendance']
     
     print(f"Lesson columns: {len(lesson_positions)}")
     print(f"Progress columns: {len(progress_positions)}")
+    print(f"Attendance columns: {len(attendance_positions)}")
     
     # Read data with pandas (this will add suffixes to duplicate columns)
     df = pd.read_csv(file_path)
@@ -38,7 +41,7 @@ def update_progress_from_lesson(file_path):
     
     # Track changes
     changes_made = 0
-    changes_by_type = {'In Progress': 0, 'Completed': 0, 'Stars to Dash': 0}
+    changes_by_type = {'In Progress': 0, 'Completed': 0, 'Stars to Dash': 0, 'Attendance Stars to Dash': 0}
     
     # Progress detection patterns
     progress_patterns = {
@@ -171,10 +174,55 @@ def update_progress_from_lesson(file_path):
                         if star_changes <= 10:
                             print(f"  Row {row_idx + 1}, Progress col {col_idx}: '{old_value}' → '{new_value}'")
     
+    # Now replace all stars when attendance is "No Class", "Absent", or "PH"
+    print(f"\n" + "=" * 70)
+    print("REPLACING STARS FOR NO CLASS/ABSENT/PH ATTENDANCE")
+    print("=" * 70)
+    
+    attendance_star_changes = 0
+    for row_idx in range(len(df_modified)):
+        row = df_modified.iloc[row_idx]
+        
+        # Process each attendance column
+        for col_idx, attendance_pos in enumerate(attendance_positions):
+            # Find the corresponding progress position (2 columns to the right)
+            progress_pos = attendance_pos + 2
+            
+            # Check if progress position exists and is within bounds
+            if progress_pos < len(row) and progress_pos < len(df_modified.columns):
+                attendance_value = row.iloc[attendance_pos]
+                progress_value = row.iloc[progress_pos]
+                
+                # Check if attendance value matches our criteria
+                if pd.notna(attendance_value) and str(attendance_value).strip() not in ['', '-', 'nan']:
+                    attendance_str = str(attendance_value).strip()
+                    
+                    # Check for "No Class", "Absent", or "PH"
+                    if attendance_str in ['No Class', 'Absent', 'PH']:
+                        # Check if progress value contains stars
+                        if pd.notna(progress_value) and str(progress_value).strip() not in ['', '-', 'nan']:
+                            progress_str = str(progress_value).strip()
+                            
+                            # Check for any star pattern (★ or ☆)
+                            if re.search(r'[★☆]', progress_str):
+                                old_value = progress_str
+                                new_value = '-'
+                                
+                                df_modified.iloc[row_idx, progress_pos] = new_value
+                                attendance_star_changes += 1
+                                changes_by_type['Attendance Stars to Dash'] += 1
+                                
+                                # Show first few attendance star changes for verification
+                                if attendance_star_changes <= 10:
+                                    print(f"  Row {row_idx + 1}, Session {col_idx + 1}:")
+                                    print(f"    Attendance: '{attendance_str}'")
+                                    print(f"    Progress: '{old_value}' → '{new_value}'")
+                                    print()
+    
     print(f"\n" + "=" * 70)
     print("CHANGE SUMMARY")
     print("=" * 70)
-    print(f"Total changes made: {changes_made + star_changes}")
+    print(f"Total changes made: {changes_made + star_changes + attendance_star_changes}")
     print(f"Changes by type:")
     for change_type, count in changes_by_type.items():
         print(f"  {change_type}: {count} changes")
@@ -185,7 +233,7 @@ def update_progress_from_lesson(file_path):
     print(f"\n✓ Modified file saved as: {output_file}")
     
     return {
-        'total_changes': changes_made + star_changes,
+        'total_changes': changes_made + star_changes + attendance_star_changes,
         'changes_by_type': changes_by_type,
         'output_file': output_file
     }
