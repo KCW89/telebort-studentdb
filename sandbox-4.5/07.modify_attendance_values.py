@@ -25,9 +25,12 @@ def modify_attendance_values(file_path):
     print(f"Attendance columns: {len(attendance_positions)}")
     print(f"Teacher columns: {len(teacher_positions)}")
     
-    # Read data with pandas
+    # Read data with pandas (this will add suffixes to duplicate columns)
     df = pd.read_csv(file_path)
     print(f"Total rows: {len(df)}")
+    
+    # Rename columns back to original names to remove the suffixes
+    df.columns = raw_columns
     
     # Create a copy of the dataframe to modify
     df_modified = df.copy()
