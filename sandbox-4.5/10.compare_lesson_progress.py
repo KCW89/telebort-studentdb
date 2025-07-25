@@ -13,7 +13,7 @@ def compare_lesson_progress(file_path):
     print("=" * 70)
     
     # Read raw CSV header to get actual column names
-    with open(file_path, 'r') as f:
+    with open(file_path, 'r', encoding='utf-8-sig') as f:
         header_line = f.readline().strip()
     
     raw_columns = header_line.split(',')
@@ -29,7 +29,7 @@ def compare_lesson_progress(file_path):
     print(f"Progress columns: {len(progress_positions)}")
     
     # Read data with pandas (this will add suffixes to duplicate columns)
-    df = pd.read_csv(file_path)
+    df = pd.read_csv(file_path, encoding='utf-8-sig')
     print(f"Total rows: {len(df)}")
     
     # Rename columns back to original names to remove the suffixes
@@ -153,9 +153,9 @@ def compare_lesson_progress(file_path):
         print(f"  {change_type}: {count} changes")
     print(f"  Stars to Dash: {remaining_stars_changed} changes")
     
-    # Save the modified file
+    # Save the modified file with proper encoding
     output_file = 'sandbox-4.5/10.lesson_comparison_progress.csv'
-    df_modified.to_csv(output_file, index=False)
+    df_modified.to_csv(output_file, index=False, encoding='utf-8-sig')
     print(f"\n✓ Modified file saved as: {output_file}")
     
     return {
