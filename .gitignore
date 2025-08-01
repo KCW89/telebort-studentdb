@@ -30,6 +30,7 @@ sandbox-4.5/*.csv
 .mcp/
 mcp_settings.json
 .mcp_config*
+CLAUDE.md
 
 # Database files
 *.db
