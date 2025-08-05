@@ -1,0 +1,94 @@
+name: Test Sync Process
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/**'
+      - 'requirements.txt'
+      - '.github/workflows/**'
+  
+  workflow_dispatch:
+
+env:
+  PYTHON_VERSION: '3.9'
+
+jobs:
+  test-sync:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Create required directories
+      run: |
+        mkdir -p scripts/logs
+        mkdir -p reports
+    
+    - name: Test imports
+      run: |
+        cd scripts
+        python -c "
+        print('Testing imports...')
+        try:
+            from sync_sheets_mcp import SheetsSyncManager
+            print('✓ sync_sheets_mcp imported')
+            from process_data import DataProcessor
+            print('✓ process_data imported')
+            from generate_reports import ReportGenerator
+            print('✓ generate_reports imported')
+            from batch_processor import BatchProcessor
+            print('✓ batch_processor imported')
+            print('All imports successful!')
+        except Exception as e:
+            print(f'Import failed: {e}')
+            exit(1)
+        "
+    
+    - name: Test error handling
+      run: |
+        cd scripts
+        python test_error_handling.py
+    
+    - name: Test batch processor
+      run: |
+        cd scripts
+        python test_batch_processor.py
+    
+    - name: Test small batch sync
+      run: |
+        cd scripts
+        python test_weekly_sync.py
+    
+    - name: Test batch processor CLI
+      run: |
+        cd scripts
+        # Test with small range
+        python batch_processor.py --start 5 --end 7 --batch-size 5
+    
+    - name: Summary
+      if: always()
+      run: |
+        echo "## Test Results" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Tests Executed" >> $GITHUB_STEP_SUMMARY
+        echo "- ✓ Import tests" >> $GITHUB_STEP_SUMMARY
+        echo "- ✓ Error handling tests" >> $GITHUB_STEP_SUMMARY
+        echo "- ✓ Batch processor tests" >> $GITHUB_STEP_SUMMARY
+        echo "- ✓ Weekly sync tests" >> $GITHUB_STEP_SUMMARY
+        echo "- ✓ CLI tests" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Environment" >> $GITHUB_STEP_SUMMARY
+        echo "- **Python:** ${{ env.PYTHON_VERSION }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **OS:** ${{ runner.os }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Date:** $(date)" >> $GITHUB_STEP_SUMMARY

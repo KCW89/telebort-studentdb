@@ -19,9 +19,10 @@ from typing import Dict, Any, List
 # Add scripts directory to path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from sync_sheets import SheetsSyncManager
+from sync_sheets_mcp import SheetsSyncManager
 from process_data import DataProcessor
 from generate_reports import ReportGenerator
+from monitoring import SyncMonitor
 
 
 class WeeklySyncOrchestrator:
@@ -32,6 +33,7 @@ class WeeklySyncOrchestrator:
         self.sync_manager = SheetsSyncManager()
         self.processor = DataProcessor()
         self.generator = ReportGenerator()
+        self.monitor = SyncMonitor()
         self.logger = self._setup_logger()
         
     def _setup_logger(self) -> logging.Logger:
@@ -130,6 +132,15 @@ class WeeklySyncOrchestrator:
         
         # Log summary
         self._log_summary(results)
+        
+        # Record metrics in monitoring system
+        self.monitor.record_sync_result(results)
+        
+        # Check data quality
+        if raw_students:
+            quality_issues = self.monitor.check_data_quality(raw_students)
+            if quality_issues:
+                self.logger.warning(f"Found {len(quality_issues)} data quality issues")
         
         return results
     

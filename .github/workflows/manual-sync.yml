@@ -1,0 +1,179 @@
+name: Manual Student Report Sync
+
+on:
+  workflow_dispatch:
+    inputs:
+      start_row:
+        description: 'Starting row (1-indexed)'
+        required: true
+        default: '5'
+        type: number
+      end_row:
+        description: 'Ending row (inclusive)'
+        required: true
+        default: '111'
+        type: number
+      batch_size:
+        description: 'Batch size for processing'
+        required: false
+        default: '20'
+        type: number
+      specific_rows:
+        description: 'Comma-separated list of specific rows (overrides range)'
+        required: false
+        type: string
+      commit_changes:
+        description: 'Commit changes to repository'
+        required: true
+        default: true
+        type: boolean
+
+env:
+  PYTHON_VERSION: '3.9'
+  BRANCH_NAME: 'cw-data-1'
+
+jobs:
+  manual-sync:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+      
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        ref: ${{ env.BRANCH_NAME }}
+        fetch-depth: 0
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Set up Git
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+    
+    - name: Create logs directory
+      run: mkdir -p scripts/logs
+    
+    - name: Run batch processor
+      id: process
+      env:
+        SYNC_MODE: "simulation"
+      run: |
+        cd scripts
+        
+        # Determine command based on inputs
+        if [ -n "${{ github.event.inputs.specific_rows }}" ]; then
+          echo "Processing specific rows: ${{ github.event.inputs.specific_rows }}"
+          python batch_processor.py \
+            --rows "${{ github.event.inputs.specific_rows }}" \
+            --batch-size ${{ github.event.inputs.batch_size }} \
+            2>&1 | tee process_output.log
+        else
+          echo "Processing range: ${{ github.event.inputs.start_row }} to ${{ github.event.inputs.end_row }}"
+          python batch_processor.py \
+            --start ${{ github.event.inputs.start_row }} \
+            --end ${{ github.event.inputs.end_row }} \
+            --batch-size ${{ github.event.inputs.batch_size }} \
+            2>&1 | tee process_output.log
+        fi
+        
+        # Check if processing was successful
+        if [ ${PIPESTATUS[0]} -eq 0 ]; then
+          echo "process_status=success" >> $GITHUB_OUTPUT
+        else
+          echo "process_status=failed" >> $GITHUB_OUTPUT
+          exit 1
+        fi
+    
+    - name: Extract processing summary
+      id: summary
+      run: |
+        cd scripts
+        # Extract summary from log
+        students=$(grep "Students processed:" process_output.log | tail -1 | awk '{print $3}')
+        reports=$(grep "Reports generated:" process_output.log | tail -1 | awk '{print $3}')
+        errors=$(grep "Errors:" process_output.log | tail -1 | awk '{print $2}')
+        
+        echo "students_processed=${students:-0}" >> $GITHUB_OUTPUT
+        echo "reports_generated=${reports:-0}" >> $GITHUB_OUTPUT
+        echo "error_count=${errors:-0}" >> $GITHUB_OUTPUT
+    
+    - name: Check for changes
+      id: check_changes
+      run: |
+        if [[ -n $(git status --porcelain reports/) ]]; then
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+        else
+          echo "has_changes=false" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Commit and push changes
+      if: steps.check_changes.outputs.has_changes == 'true' && github.event.inputs.commit_changes == 'true'
+      run: |
+        # Add all report files
+        git add reports/*.md
+        
+        # Create commit message
+        if [ -n "${{ github.event.inputs.specific_rows }}" ]; then
+          DESCRIPTION="rows ${{ github.event.inputs.specific_rows }}"
+        else
+          DESCRIPTION="rows ${{ github.event.inputs.start_row }}-${{ github.event.inputs.end_row }}"
+        fi
+        
+        git commit -m "Manual sync: ${DESCRIPTION} - GitHub Actions
+        
+        Students processed: ${{ steps.summary.outputs.students_processed }}
+        Reports generated: ${{ steps.summary.outputs.reports_generated }}
+        Triggered by: @${{ github.actor }}
+        Workflow: ${{ github.workflow }}
+        Run: ${{ github.run_number }}"
+        
+        # Push to branch
+        git push origin ${{ env.BRANCH_NAME }}
+    
+    - name: Upload processing logs
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: manual-sync-logs-${{ github.run_number }}
+        path: |
+          scripts/process_output.log
+          scripts/logs/
+        retention-days: 7
+    
+    - name: Summary
+      if: always()
+      run: |
+        echo "## Manual Sync Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Processing Parameters" >> $GITHUB_STEP_SUMMARY
+        if [ -n "${{ github.event.inputs.specific_rows }}" ]; then
+          echo "- **Rows:** ${{ github.event.inputs.specific_rows }}" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "- **Row Range:** ${{ github.event.inputs.start_row }} to ${{ github.event.inputs.end_row }}" >> $GITHUB_STEP_SUMMARY
+        fi
+        echo "- **Batch Size:** ${{ github.event.inputs.batch_size }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Results" >> $GITHUB_STEP_SUMMARY
+        echo "- **Status:** ${{ steps.process.outputs.process_status || 'unknown' }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Students Processed:** ${{ steps.summary.outputs.students_processed || '0' }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Reports Generated:** ${{ steps.summary.outputs.reports_generated || '0' }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Errors:** ${{ steps.summary.outputs.error_count || '0' }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Changes Detected:** ${{ steps.check_changes.outputs.has_changes || 'unknown' }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Changes Committed:** ${{ github.event.inputs.commit_changes }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Metadata" >> $GITHUB_STEP_SUMMARY
+        echo "- **Branch:** ${{ env.BRANCH_NAME }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Triggered by:** @${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Run:** #${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Date:** $(date)" >> $GITHUB_STEP_SUMMARY

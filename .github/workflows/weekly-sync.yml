@@ -1,0 +1,145 @@
+name: Weekly Student Report Sync
+
+on:
+  # Run every Sunday at 11:00 PM SGT (3:00 PM UTC)
+  schedule:
+    - cron: '0 15 * * 0'
+  
+  # Allow manual trigger
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Run in dry-run mode (no commits)'
+        required: false
+        default: 'false'
+        type: boolean
+
+env:
+  PYTHON_VERSION: '3.9'
+  BRANCH_NAME: 'cw-data-1'
+
+jobs:
+  sync-reports:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+      
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        ref: ${{ env.BRANCH_NAME }}
+        fetch-depth: 0
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    
+    - name: Cache Python dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Set up Git
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+    
+    - name: Create logs directory
+      run: mkdir -p scripts/logs
+    
+    - name: Run weekly sync
+      id: sync
+      env:
+        # Note: MCP integration requires Claude Code environment
+        # This workflow runs in simulation mode for now
+        SYNC_MODE: "simulation"
+      run: |
+        cd scripts
+        python run_weekly_sync.py 2>&1 | tee sync_output.log
+        
+        # Check if sync was successful
+        if [ ${PIPESTATUS[0]} -eq 0 ]; then
+          echo "sync_status=success" >> $GITHUB_OUTPUT
+        else
+          echo "sync_status=failed" >> $GITHUB_OUTPUT
+          exit 1
+        fi
+    
+    - name: Check for changes
+      id: check_changes
+      run: |
+        if [[ -n $(git status --porcelain reports/) ]]; then
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+        else
+          echo "has_changes=false" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Commit and push changes
+      if: steps.check_changes.outputs.has_changes == 'true' && github.event.inputs.dry_run != 'true'
+      run: |
+        # Add all report files
+        git add reports/*.md
+        
+        # Create commit
+        WEEK=$(date +%V)
+        YEAR=$(date +%Y)
+        git commit -m "Weekly sync: Week $WEEK/$YEAR - GitHub Actions
+        
+        Automated weekly student report sync
+        Branch: ${{ env.BRANCH_NAME }}
+        Workflow: ${{ github.workflow }}
+        Run: ${{ github.run_number }}"
+        
+        # Push to branch
+        git push origin ${{ env.BRANCH_NAME }}
+    
+    - name: Upload sync logs
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: sync-logs-${{ github.run_number }}
+        path: |
+          scripts/sync_output.log
+          scripts/logs/sync_history.log
+        retention-days: 30
+    
+    - name: Create issue on failure
+      if: failure()
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const date = new Date().toISOString().split('T')[0];
+          const issue = await github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: `Weekly Sync Failed - ${date}`,
+            body: `The weekly student report sync failed on ${date}.
+            
+            **Workflow Run:** [#${{ github.run_number }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            **Branch:** ${{ env.BRANCH_NAME }}
+            
+            Please check the logs and resolve the issue.`,
+            labels: ['bug', 'automation']
+          });
+    
+    - name: Summary
+      if: always()
+      run: |
+        echo "## Weekly Sync Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "- **Status:** ${{ steps.sync.outputs.sync_status || 'unknown' }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Changes:** ${{ steps.check_changes.outputs.has_changes || 'unknown' }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Branch:** ${{ env.BRANCH_NAME }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Run:** #${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Date:** $(date)" >> $GITHUB_STEP_SUMMARY
