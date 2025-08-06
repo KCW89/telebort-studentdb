@@ -17,15 +17,15 @@ Telebort StudentDB is a comprehensive educational data management system for Tel
 ```
 telebort-studentdb/
 ├── data/                         # All data files
-│   ├── raw/                     # Original unprocessed data
-│   │   ├── batches/              # Batch JSON files (18 batches)
+│   ├── raw/                     # Original unprocessed data (gitignored)
+│   │   ├── batches/              # Batch JSON files (gitignored)
 │   │   └── sheets/               # Google Sheets exports
 │   ├── processed/                # Cleaned and processed data
 │   │   └── summaries/            # Processing summaries
-│   └── sandbox-4.5/              # Current semester data
+│   └── sandbox-4.5/              # Analysis scripts and tools
 │
-├── reports/                      # Generated student reports (107 students)
-├── teacher-reports/              # Teacher-based report organization
+├── reports/                      # Original reports with names (gitignored)
+├── reports_anonymized/           # Anonymized reports (public)
 ├── scripts/                      # Processing and utility scripts
 ├── templates/                    # Report and document templates
 ├── docs/                         # Documentation
@@ -51,6 +51,20 @@ telebort-studentdb/
    ```bash
    python scripts/generate_reports.py
    ```
+
+## Privacy & Data Protection
+
+This repository follows strict privacy guidelines:
+
+- **Student Names**: All student names have been anonymized in public-facing reports
+- **Student IDs**: Uses anonymous ID format (s10XXX) throughout
+- **Raw Data**: Original data files containing personal information are gitignored
+- **Public Reports**: Only anonymized versions are included in the repository
+
+To generate anonymized reports from original data:
+```bash
+python scripts/anonymize_reports.py
+```
 
 ## License
 

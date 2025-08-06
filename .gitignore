@@ -30,7 +30,7 @@ sandbox-4.5/*.csv
 .mcp/
 mcp_settings.json
 .mcp_config*
-CLAUDE.md
+# Note: CLAUDE.md is project documentation and should be tracked
 
 # Database files
 *.db
@@ -105,8 +105,18 @@ TODO.txt
 *.rar
 *.7z
 
+# Sensitive data files with real names
+data/raw/batches/*.json
+sheets_data*.json
+complete_sample_data.json
+
+# Reports with real student names
+# Note: Reports contain actual student names and should be gitignored
+# Only anonymized versions should be in public repo
+/reports/*.md
+scripts/reports/
+
 # Other data formats
-*.json
 *.xml
 *.pkl
 *.pickle

@@ -24,10 +24,6 @@ Telebort studentdb is an educational data management system for Telebort Academy
 /reports/
   └── s[StudentID].md        # Individual student reports (107 students)
 
-/teacher-reports/
-  └── Teacher [Name]/
-      └── s[StudentID].md    # Teacher-specific student reports
-
 /scripts/
   ├── batch_processor.py     # Main batch processing
   └── enhanced_data_processor.py  # Data cleaning
