@@ -1,353 +1,284 @@
-#!/usr/bin/env python3
+#\!/usr/bin/env python3
 """
-batch_processor.py - Unified batch processor for student data
-
-This module consolidates all batch processing functionality into a single,
-configurable processor that can handle any row range or batch size.
+Batch processor for complete student data
 """
 
 import json
-import os
-import sys
 import logging
+from pathlib import Path
+from typing import Dict, List, Optional
 from datetime import datetime
-from typing import List, Dict, Any, Optional, Tuple
+from enhanced_data_processor import EnhancedDataProcessor
 
-# Add scripts directory to path
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-from sync_sheets_mcp import SheetsSyncManager
-from process_data import DataProcessor
-from generate_reports import ReportGenerator
-from data_validator import DataValidator
-from monitoring import SyncMonitor
-
-
-class BatchProcessor:
-    """Unified batch processor for student data"""
+def parse_batch_data(batch_data) -> List[Dict]:
+    """Parse student data from batch JSON"""
+    students = []
     
-    # Default batch configurations
-    DEFAULT_BATCH_SIZE = 20
-    MAX_BATCH_SIZE = 50  # MCP token limit safety
+    # Handle list format (batches 3, 4)
+    if isinstance(batch_data, list):
+        for student_data in batch_data:
+            student = {
+                'name': student_data.get('name', ''),
+                'student_id': student_data.get('student_id', ''),
+                'program': student_data.get('program', ''),
+                'teacher': student_data.get('teacher', ''),
+                'sessions': student_data.get('sessions', [])
+            }
+            
+            if student['student_id']:
+                students.append(student)
+        return students
     
-    def __init__(self, batch_size: int = DEFAULT_BATCH_SIZE, validate_data: bool = True):
-        """
-        Initialize the batch processor
-        
-        Args:
-            batch_size: Number of rows to process in each batch
-            validate_data: Whether to perform data validation
-        """
-        self.batch_size = min(batch_size, self.MAX_BATCH_SIZE)
-        self.validate_data = validate_data
-        self.sync_manager = SheetsSyncManager()
-        self.processor = DataProcessor()
-        self.generator = ReportGenerator()
-        self.validator = DataValidator() if validate_data else None
-        self.monitor = SyncMonitor()
-        self.logger = self._setup_logger()
-        
-    def _setup_logger(self) -> logging.Logger:
-        """Set up logging configuration"""
-        logger = logging.getLogger('BatchProcessor')
-        logger.setLevel(logging.INFO)
-        
-        # Console handler
-        ch = logging.StreamHandler()
-        ch.setLevel(logging.INFO)
-        
-        # Formatter
-        formatter = logging.Formatter(
-            '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-        )
-        ch.setFormatter(formatter)
-        
-        if not logger.handlers:
-            logger.addHandler(ch)
-        
-        return logger
-    
-    def process_range(self, start_row: int, end_row: int) -> Dict[str, Any]:
-        """
-        Process a range of rows in batches
-        
-        Args:
-            start_row: Starting row (1-indexed, inclusive)
-            end_row: Ending row (1-indexed, inclusive)
-            
-        Returns:
-            Summary of processing results
-        """
-        self.logger.info(f"Processing rows {start_row} to {end_row} in batches of {self.batch_size}")
-        
-        results = {
-            'start_row': start_row,
-            'end_row': end_row,
-            'batch_size': self.batch_size,
-            'batches_processed': 0,
-            'students_fetched': 0,
-            'students_processed': 0,
-            'reports_generated': 0,
-            'reports_unchanged': 0,
-            'errors': [],
-            'student_ids': []
-        }
-        
-        # Process in batches
-        current_row = start_row
-        batch_num = 1
-        
-        while current_row <= end_row:
-            batch_end = min(current_row + self.batch_size - 1, end_row)
-            
-            self.logger.info(f"\nBatch {batch_num}: rows {current_row} to {batch_end}")
-            
-            try:
-                # Process this batch
-                batch_results = self._process_batch(current_row, batch_end)
+    # Handle raw_data format
+    if 'raw_data' in batch_data:
+        for row in batch_data['raw_data']:
+            if not row or len(row) < 7:
+                continue
                 
-                # Update results
-                results['batches_processed'] += 1
-                results['students_fetched'] += batch_results['fetched']
-                results['students_processed'] += batch_results['processed']
-                results['reports_generated'] += batch_results['generated']
-                results['reports_unchanged'] += batch_results['unchanged']
-                results['errors'].extend(batch_results['errors'])
-                results['student_ids'].extend(batch_results['student_ids'])
+            student = {
+                'name': row[0],
+                'student_id': row[1],
+                'program': row[2] if len(row) > 2 else '',
+                'teacher': row[6] if len(row) > 6 else '',
+                'sessions': []
+            }
+            
+            # Parse sessions (every 5 columns starting from index 7)
+            for i in range(7, len(row), 5):
+                if i + 4 >= len(row):
+                    break
+                    
+                date = row[i]
+                session = row[i+1] if i+1 < len(row) else ''
+                lesson = row[i+2] if i+2 < len(row) else ''
+                attendance = row[i+3] if i+3 < len(row) else ''
+                progress = row[i+4] if i+4 < len(row) else ''
+                
+                if date and date != '-':
+                    student['sessions'].append({
+                        'date': date,
+                        'session': session,
+                        'lesson': lesson,
+                        'attendance': attendance,
+                        'progress': progress
+                    })
+            
+            if student['student_id'] and student['student_id'] != '-':
+                students.append(student)
+    
+    # Handle results format (batches 1, 8-18)
+    elif 'results' in batch_data:
+        results = batch_data['results']
+        if results and len(results) > 0:
+            # Try raw_rows first, then rows
+            rows = results[0].get('raw_rows', results[0].get('rows', []))
+            
+            for row in rows:
+                if not row or len(row) < 7:
+                    continue
+                    
+                # Check if student_id is at index 1 or 2
+                student_id = row[1] if row[1] and row[1] != '' else row[2] if len(row) > 2 else ''
+                
+                student = {
+                    'name': row[0],
+                    'student_id': student_id,
+                    'program': row[3] if len(row) > 3 else row[2] if len(row) > 2 else '',
+                    'teacher': row[7] if len(row) > 7 else row[6] if len(row) > 6 else '',
+                    'sessions': []
+                }
+                
+                for i in range(7, len(row), 5):
+                    if i + 4 >= len(row):
+                        break
+                        
+                    date = row[i]
+                    session = row[i+1] if i+1 < len(row) else ''
+                    lesson = row[i+2] if i+2 < len(row) else ''
+                    attendance = row[i+3] if i+3 < len(row) else ''
+                    progress = row[i+4] if i+4 < len(row) else ''
+                    
+                    if date and date != '-':
+                        student['sessions'].append({
+                            'date': date,
+                            'session': session,
+                            'lesson': lesson,
+                            'attendance': attendance,
+                            'progress': progress
+                        })
+                
+                if student['student_id'] and student['student_id'] != '-':
+                    students.append(student)
+    
+    return students
+
+def generate_report(student: Dict) -> str:
+    """Generate markdown report for a student"""
+    report = []
+    
+    report.append(f"# Student Attendance & Progress Report")
+    report.append(f"\n**Student ID:** {student['student_id']}")
+    report.append(f"**Name:** {student['name']}")
+    report.append(f"**Program:** {student.get('program', 'N/A')}")
+    report.append(f"**Primary Teacher:** {student.get('teacher', 'Various')}")
+    
+    sessions = student.get('sessions', [])
+    total_sessions = len(sessions)
+    attended = sum(1 for s in sessions if s.get('attendance') in ['Attended', 'Completed', 'In Progress'])
+    
+    report.append(f"\n## Summary Statistics")
+    report.append(f"- **Total Sessions:** {total_sessions}")
+    report.append(f"- **Sessions Attended:** {attended}")
+    
+    if total_sessions > 0:
+        attendance_rate = (attended / total_sessions) * 100
+        report.append(f"- **Attendance Rate:** {attendance_rate:.1f}%")
+    
+    if sessions:
+        dates = [s['date'] for s in sessions if s.get('date') and s['date'] != '-']
+        if dates:
+            report.append(f"- **Date Range:** {dates[-1]} to {dates[0]}")
+    
+    report.append(f"\n## Detailed Session Log")
+    report.append(f"\n| Session | Date | Attendance | Lesson/Topic | Progress |")
+    report.append(f"|---------|------|------------|--------------|----------|")
+    
+    for session in sessions:
+        session_num = session.get('session', '-')
+        date = session.get('date', '-')
+        attendance = session.get('attendance', '-')
+        lesson = session.get('lesson', '-')[:50]
+        progress = session.get('progress', '-')
+        
+        if lesson and lesson != '-':
+            lesson = lesson.replace('\n', ' ').replace('\r', ' ')
+            if len(lesson) > 50:
+                lesson = lesson[:47] + "..."
+        
+        report.append(f"| {session_num} | {date} | {attendance} | {lesson} | {progress} |")
+    
+    report.append(f"\n---")
+    report.append(f"*Report generated on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}*")
+    
+    return '\n'.join(report)
+
+def process_batch_file(batch_file: str) -> Optional[Dict]:
+    """Process a single batch file"""
+    try:
+        batch_path = Path(batch_file)
+        
+        if not batch_path.exists():
+            batch_path = Path("/Users/chongwei/Telebort Engineering/telebort-studentdb") / batch_file
+        
+        if not batch_path.exists():
+            logging.error(f"Batch file not found: {batch_file}")
+            return None
+        
+        logging.info(f"Processing {batch_file}...")
+        
+        with open(batch_path, 'r') as f:
+            batch_data = json.load(f)
+        
+        students = parse_batch_data(batch_data)
+        
+        if not students:
+            logging.warning(f"No students found in {batch_file}")
+            return None
+        
+        logging.info(f"Parsed {len(students)} students from {batch_file}")
+        
+        processor = EnhancedDataProcessor()
+        cleaned_students, metrics = processor.process_student_data(students)
+        
+        # Use cleaned students for reports
+        students = cleaned_students
+        total_sessions = sum(len(s['sessions']) for s in students)
+        
+        reports_dir = Path("/Users/chongwei/Telebort Engineering/telebort-studentdb/reports")
+        reports_dir.mkdir(exist_ok=True)
+        
+        reports_generated = 0
+        for student in students:
+            try:
+                report_content = generate_report(student)
+                report_path = reports_dir / f"{student['student_id']}.md"
+                
+                with open(report_path, 'w') as f:
+                    f.write(report_content)
+                
+                reports_generated += 1
                 
             except Exception as e:
-                error_msg = f"Batch {batch_num} failed: {str(e)}"
-                self.logger.error(error_msg)
-                results['errors'].append(error_msg)
-            
-            current_row = batch_end + 1
-            batch_num += 1
+                logging.error(f"Error generating report for {student['student_id']}: {e}")
         
-        # Log summary
-        self._log_summary(results)
-        
-        # Record metrics
-        self.monitor.record_sync_result(results)
-        
-        # Generate monitoring report
-        health_report = self.monitor.generate_health_report()
-        self.logger.debug(f"Health report:\n{health_report}")
-        
-        return results
-    
-    def _process_batch(self, start_row: int, end_row: int) -> Dict[str, Any]:
-        """
-        Process a single batch of rows
-        
-        Args:
-            start_row: Starting row
-            end_row: Ending row
-            
-        Returns:
-            Batch processing results
-        """
-        batch_results = {
-            'fetched': 0,
-            'processed': 0,
-            'generated': 0,
-            'unchanged': 0,
-            'errors': [],
-            'student_ids': []
+        return {
+            'students_processed': len(students),
+            'total_sessions': total_sessions,
+            'reports_generated': reports_generated,
+            'data_quality_improvements': sum(metrics.values())
         }
         
-        try:
-            # Fetch batch from Google Sheets
-            students = self.sync_manager.fetch_batch(start_row, end_row)
-            batch_results['fetched'] = len(students)
-            
-            if not students:
-                self.logger.warning(f"No students found in rows {start_row}-{end_row}")
-                return batch_results
-            
-            # Validate data if enabled
-            if self.validate_data and self.validator:
-                self.logger.info("Validating student data...")
-                validation_summary, validation_issues = self.validator.validate_batch(students)
-                
-                if validation_issues:
-                    self.logger.warning(
-                        f"Found {len(validation_issues)} validation issues "
-                        f"in {validation_summary['students_with_issues']} students"
-                    )
-                    
-                    # Add validation errors to batch results
-                    for issue in validation_issues[:5]:  # Log first 5 issues
-                        batch_results['errors'].append(
-                            f"Validation [{issue['severity']}] {issue['student_id']}: {issue['message']}"
-                        )
-                
-                # Log validation summary
-                self.logger.info(
-                    f"Validation rate: {validation_summary['validation_rate']:.1%} "
-                    f"({validation_summary['issues_by_severity']['error']} errors, "
-                    f"{validation_summary['issues_by_severity']['warning']} warnings)"
-                )
-            
-            # Process each student
-            processed_students = []
-            for student_data in students:
-                try:
-                    student_id = student_data['info']['student_id']
-                    student_name = student_data['info']['student_name']
-                    
-                    self.logger.info(f"Processing {student_id} - {student_name}")
-                    
-                    # Process the data
-                    processed = self.processor.process_student(student_data)
-                    processed_students.append(processed)
-                    batch_results['processed'] += 1
-                    batch_results['student_ids'].append(student_id)
-                    
-                except Exception as e:
-                    error_msg = f"Failed to process student: {str(e)}"
-                    self.logger.error(error_msg)
-                    batch_results['errors'].append(error_msg)
-            
-            # Generate reports for processed students
-            if processed_students:
-                generation_results = self.generator.generate_batch(processed_students)
-                batch_results['generated'] = generation_results['generated']
-                batch_results['unchanged'] = generation_results.get('unchanged', 0)
-                batch_results['errors'].extend(generation_results.get('error_details', []))
-            
-        except Exception as e:
-            error_msg = f"Batch processing failed: {str(e)}"
-            self.logger.error(error_msg)
-            batch_results['errors'].append(error_msg)
-        
-        return batch_results
-    
-    def process_specific_rows(self, row_list: List[int]) -> Dict[str, Any]:
-        """
-        Process specific rows (not necessarily contiguous)
-        
-        Args:
-            row_list: List of row numbers to process
-            
-        Returns:
-            Summary of processing results
-        """
-        self.logger.info(f"Processing {len(row_list)} specific rows")
-        
-        results = {
-            'rows': row_list,
-            'students_fetched': 0,
-            'students_processed': 0,
-            'reports_generated': 0,
-            'reports_unchanged': 0,
-            'errors': [],
-            'student_ids': []
-        }
-        
-        # Group consecutive rows into ranges for efficiency
-        ranges = self._group_consecutive_rows(row_list)
-        
-        for start, end in ranges:
-            range_results = self.process_range(start, end)
-            
-            # Aggregate results
-            results['students_fetched'] += range_results['students_fetched']
-            results['students_processed'] += range_results['students_processed']
-            results['reports_generated'] += range_results['reports_generated']
-            results['reports_unchanged'] += range_results['reports_unchanged']
-            results['errors'].extend(range_results['errors'])
-            results['student_ids'].extend(range_results['student_ids'])
-        
-        return results
-    
-    def _group_consecutive_rows(self, row_list: List[int]) -> List[Tuple[int, int]]:
-        """
-        Group consecutive row numbers into ranges
-        
-        Args:
-            row_list: List of row numbers
-            
-        Returns:
-            List of (start, end) tuples
-        """
-        if not row_list:
-            return []
-        
-        sorted_rows = sorted(set(row_list))
-        ranges = []
-        
-        start = sorted_rows[0]
-        end = sorted_rows[0]
-        
-        for row in sorted_rows[1:]:
-            if row == end + 1:
-                end = row
-            else:
-                ranges.append((start, end))
-                start = row
-                end = row
-        
-        ranges.append((start, end))
-        return ranges
-    
-    def _log_summary(self, results: Dict[str, Any]) -> None:
-        """Log a summary of processing results"""
-        self.logger.info("\n" + "=" * 60)
-        self.logger.info("BATCH PROCESSING SUMMARY")
-        self.logger.info("=" * 60)
-        
-        if 'start_row' in results and 'end_row' in results:
-            self.logger.info(f"Row range: {results['start_row']} to {results['end_row']}")
-        elif 'rows' in results:
-            self.logger.info(f"Specific rows: {len(results['rows'])} rows")
-        
-        self.logger.info(f"Batches processed: {results.get('batches_processed', 'N/A')}")
-        self.logger.info(f"Students fetched: {results['students_fetched']}")
-        self.logger.info(f"Students processed: {results['students_processed']}")
-        self.logger.info(f"Reports generated: {results['reports_generated']}")
-        self.logger.info(f"Reports unchanged: {results['reports_unchanged']}")
-        self.logger.info(f"Errors: {len(results['errors'])}")
-        
-        if results['errors']:
-            self.logger.warning("\nErrors encountered:")
-            for error in results['errors'][:5]:  # Show first 5 errors
-                self.logger.warning(f"  - {error}")
-            if len(results['errors']) > 5:
-                self.logger.warning(f"  ... and {len(results['errors']) - 5} more errors")
-        
-        self.logger.info("=" * 60)
-
+    except Exception as e:
+        logging.error(f"Error processing {batch_file}: {e}")
+        return None
 
 def main():
-    """Example usage of the batch processor"""
-    import argparse
+    """Process all batch files"""
+    batch_files = [
+        "batch1_complete.json", "batch2_complete.json", "batch3_complete.json",
+        "batch4_complete.json", "batch5_complete.json", "batch6_complete.json",
+        "batch7_complete.json", "batch8_complete.json", "batch9_complete.json",
+        "batch10_complete.json", "batch11_complete.json", "batch12_complete.json",
+        "batch13_complete.json", "batch14_complete.json", "batch15_complete.json",
+        "batch16_complete.json", "batch17_complete.json", "batch18_complete.json"
+    ]
     
-    parser = argparse.ArgumentParser(description='Process student data in batches')
-    parser.add_argument('--start', type=int, required=True, help='Starting row (1-indexed)')
-    parser.add_argument('--end', type=int, required=True, help='Ending row (inclusive)')
-    parser.add_argument('--batch-size', type=int, default=20, help='Batch size (default: 20)')
-    parser.add_argument('--rows', type=str, help='Comma-separated list of specific rows')
+    print("=" * 70)
+    print("BATCH PROCESSING - COMPLETE STUDENT DATA")
+    print("=" * 70)
     
-    args = parser.parse_args()
+    total_students = 0
+    total_sessions = 0
+    total_reports = 0
+    processed_batches = []
+    failed_batches = []
     
-    # Initialize processor
-    processor = BatchProcessor(batch_size=args.batch_size)
+    for batch_file in batch_files:
+        result = process_batch_file(batch_file)
+        
+        if result:
+            total_students += result['students_processed']
+            total_sessions += result['total_sessions']
+            total_reports += result['reports_generated']
+            processed_batches.append(batch_file)
+            
+            print(f"✅ {batch_file}: {result['students_processed']} students, {result['reports_generated']} reports")
+        else:
+            failed_batches.append(batch_file)
+            print(f"❌ {batch_file}: Failed to process")
     
-    # Process based on arguments
-    if args.rows:
-        # Process specific rows
-        row_list = [int(r.strip()) for r in args.rows.split(',')]
-        results = processor.process_specific_rows(row_list)
+    print("\n" + "=" * 70)
+    print("PROCESSING SUMMARY")
+    print("=" * 70)
+    print(f"\n📊 Results:")
+    print(f"   • Batches processed: {len(processed_batches)}/{len(batch_files)}")
+    print(f"   • Students processed: {total_students}")
+    print(f"   • Total sessions: {total_sessions}")
+    print(f"   • Reports generated: {total_reports}")
+    
+    if total_students > 0:
+        print(f"   • Average sessions/student: {total_sessions/total_students:.1f}")
+    
+    if failed_batches:
+        print(f"\n⚠️  Failed batches:")
+        for batch in failed_batches:
+            print(f"   • {batch}")
     else:
-        # Process range
-        results = processor.process_range(args.start, args.end)
+        print(f"\n✅ All batches processed successfully!")
     
-    # Exit with error code if there were errors
-    if results['errors']:
-        return 1
-    
-    return 0
-
+    return 0 if not failed_batches else 1
 
 if __name__ == "__main__":
     exit(main())
