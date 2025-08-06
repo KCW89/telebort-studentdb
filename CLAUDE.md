@@ -8,46 +8,63 @@ Telebort studentdb is an educational data management system for Telebort Academy
 
 ## Core Architecture
 
-### Data Organization
+### Data Organization (Updated Structure)
 ```
-/Teacher [Name]/
-  └── s[StudentID].md     # Individual student reports (anonymized)
+/data/
+  ├── raw/
+  │   ├── batches/           # Batch JSON files (18 batches, 107 students)
+  │   └── sheets/            # Google Sheets exports
+  ├── processed/
+  │   └── summaries/         # Processing summaries
+  └── sandbox-4.5/
+      ├── *.py               # Data processing scripts
+      ├── *.csv              # Student data files (338 columns A-LZ)
+      └── *.ipynb            # Jupyter notebooks
 
-/sandbox-4.5/
-  ├── *.py               # Data processing scripts
-  ├── *.csv              # Student data files
-  └── *.ipynb            # Jupyter notebooks
+/reports/
+  └── s[StudentID].md        # Individual student reports (107 students)
+
+/teacher-reports/
+  └── Teacher [Name]/
+      └── s[StudentID].md    # Teacher-specific student reports
+
+/scripts/
+  ├── batch_processor.py     # Main batch processing
+  └── enhanced_data_processor.py  # Data cleaning
 ```
 
 ### Data Processing Pipeline
-1. **Raw Data**: `sandbox.csv` (111 students, 480 columns - 8 columns per time period)
-2. **Column Extraction**: Scripts extract 6 key columns (Date, Session, Lesson, Attendance, Teacher, Progress)
-3. **Data Transformation**: Wide format conversion for analysis
-4. **Report Generation**: Markdown files with student performance metrics
+1. **Raw Data**: Google Sheets with 338 columns (A-LZ), complete historical data
+2. **Batch Processing**: 18 batches of ~6 students each for efficient processing
+3. **Data Cleaning**: Enhanced processor for teacher names, progress, URLs
+4. **Report Generation**: Markdown files with complete session history (avg 41.7 sessions/student)
 
 ## Common Commands
 
 ### Data Analysis Scripts
 ```bash
+# Process all batch data
+python scripts/batch_processor.py
+
 # Basic CSV analysis
-python sandbox-4.5/01.analysis_script.py
+python data/sandbox-4.5/01.analysis_script.py
 
 # Extract all student data
-python sandbox-4.5/04.all-extractions.py
+python data/sandbox-4.5/04.all-extractions.py
 
 # Analyze teacher attendance
-python sandbox-4.5/05.analyze_attendance_teacher.py
+python data/sandbox-4.5/05.analyze_attendance_teacher.py
 
 # Graduation processing
-python sandbox-4.5/11.graduate_session_1.py
+python data/sandbox-4.5/11.graduate_session_1.py
 
 # Jupyter analysis
-jupyter notebook sandbox-4.5/checking-csv-file.ipynb
+jupyter notebook data/sandbox-4.5/checking-csv-file.ipynb
 ```
 
 ## Data Schema
 
-### CSV Structure (Repeating 8-column pattern)
+### CSV Structure (338 columns A-LZ, 5-column session pattern)
 - Column 0: Date (DD/MM/YYYY)
 - Column 1: Attendance (Attended/Absent/No Class/Public Holiday)
 - Column 2: Teacher name
