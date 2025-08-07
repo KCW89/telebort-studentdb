@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-08-07T00:34:03.822396",
+  "ml_predictions": 193,
+  "total_coverage": 66.56353591160222,
+  "attended_coverage": 94.65033838221076,
+  "feature_importance": {
+    "session_num_int": 9,
+    "session_num_mod5": 4,
+    "prev_attended_count": 3,
+    "month": 2,
+    "program_encoded": 2,
+    "days_since_start": 2,
+    "teacher_encoded": 2,
+    "session_num_mod10": 2,
+    "is_ai_program": 1,
+    "is_bb_program": 1
+  },
+  "output_file": "data/vertical_csv/telebort_ml_enhanced_20250807_003403.csv"
+}

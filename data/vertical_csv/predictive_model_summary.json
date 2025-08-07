@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-08-07T00:25:04.345498",
+  "total_sessions": 4525,
+  "gaps_found": 651,
+  "predictions_made": 292,
+  "success_rate": 44.85407066052227,
+  "coverage_gain": 6.453038674033149,
+  "output_file": "data/vertical_csv/telebort_predictive_enhanced_20250807_002504.csv"
+}
