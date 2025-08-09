@@ -1,0 +1,1445 @@
+{
+  "student_metrics": {
+    "s10084": {
+      "attendance_rate": 0.806,
+      "completion_rate": 0.6,
+      "avg_sessions_to_complete": 1.7,
+      "avg_data_confidence": 0.715,
+      "max_consecutive_absences": 2,
+      "total_sessions": 42,
+      "sessions_attended": "25",
+      "lessons_completed": "15"
+    },
+    "s10100": {
+      "attendance_rate": 0.968,
+      "completion_rate": 0.567,
+      "avg_sessions_to_complete": 1.8,
+      "avg_data_confidence": 0.804,
+      "max_consecutive_absences": 1,
+      "total_sessions": 42,
+      "sessions_attended": "30",
+      "lessons_completed": "17"
+    },
+    "s10151": {
+      "attendance_rate": 0.978,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.664,
+      "max_consecutive_absences": 1,
+      "total_sessions": 55,
+      "sessions_attended": "44",
+      "lessons_completed": "0"
+    },
+    "s10152": {
+      "attendance_rate": 0.957,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.671,
+      "max_consecutive_absences": 1,
+      "total_sessions": 55,
+      "sessions_attended": "44",
+      "lessons_completed": "0"
+    },
+    "s10154": {
+      "attendance_rate": 0.844,
+      "completion_rate": 0.382,
+      "avg_sessions_to_complete": 2.6,
+      "avg_data_confidence": 0.579,
+      "max_consecutive_absences": 4,
+      "total_sessions": 110,
+      "sessions_attended": "76",
+      "lessons_completed": "29"
+    },
+    "s10157": {
+      "attendance_rate": 0.936,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.598,
+      "max_consecutive_absences": 1,
+      "total_sessions": 55,
+      "sessions_attended": "44",
+      "lessons_completed": "0"
+    },
+    "s10159": {
+      "attendance_rate": 0.933,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.574,
+      "max_consecutive_absences": 2,
+      "total_sessions": 55,
+      "sessions_attended": "42",
+      "lessons_completed": "0"
+    },
+    "s10160": {
+      "attendance_rate": 0.83,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.567,
+      "max_consecutive_absences": 3,
+      "total_sessions": 55,
+      "sessions_attended": "39",
+      "lessons_completed": "0"
+    },
+    "s10161": {
+      "attendance_rate": 0.915,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.592,
+      "max_consecutive_absences": 1,
+      "total_sessions": 55,
+      "sessions_attended": "43",
+      "lessons_completed": "0"
+    },
+    "s10166": {
+      "attendance_rate": 0.718,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.508,
+      "max_consecutive_absences": 2,
+      "total_sessions": 49,
+      "sessions_attended": "28",
+      "lessons_completed": "0"
+    },
+    "s10168": {
+      "attendance_rate": 0.933,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.576,
+      "max_consecutive_absences": 2,
+      "total_sessions": 55,
+      "sessions_attended": "42",
+      "lessons_completed": "0"
+    },
+    "s10169": {
+      "attendance_rate": 0.851,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.564,
+      "max_consecutive_absences": 1,
+      "total_sessions": 55,
+      "sessions_attended": "40",
+      "lessons_completed": "0"
+    },
+    "s10177": {
+      "attendance_rate": 0.894,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.607,
+      "max_consecutive_absences": 1,
+      "total_sessions": 55,
+      "sessions_attended": "42",
+      "lessons_completed": "0"
+    },
+    "s10213": {
+      "attendance_rate": 0.803,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.563,
+      "max_consecutive_absences": 4,
+      "total_sessions": 79,
+      "sessions_attended": "49",
+      "lessons_completed": "0"
+    },
+    "s10219": {
+      "attendance_rate": 0.656,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.498,
+      "max_consecutive_absences": 4,
+      "total_sessions": 81,
+      "sessions_attended": "40",
+      "lessons_completed": "0"
+    },
+    "s10224": {
+      "attendance_rate": 0.853,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.551,
+      "max_consecutive_absences": 2,
+      "total_sessions": 43,
+      "sessions_attended": "29",
+      "lessons_completed": "0"
+    },
+    "s10227": {
+      "attendance_rate": 0.778,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.535,
+      "max_consecutive_absences": 2,
+      "total_sessions": 55,
+      "sessions_attended": "35",
+      "lessons_completed": "0"
+    },
+    "s10240": {
+      "attendance_rate": 0.879,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.548,
+      "max_consecutive_absences": 2,
+      "total_sessions": 43,
+      "sessions_attended": "29",
+      "lessons_completed": "0"
+    },
+    "s10243": {
+      "attendance_rate": 0.97,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.571,
+      "max_consecutive_absences": 1,
+      "total_sessions": 43,
+      "sessions_attended": "32",
+      "lessons_completed": "0"
+    },
+    "s10249": {
+      "attendance_rate": 0.941,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.571,
+      "max_consecutive_absences": 1,
+      "total_sessions": 43,
+      "sessions_attended": "32",
+      "lessons_completed": "0"
+    },
+    "s10333": {
+      "attendance_rate": 0.978,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.544,
+      "max_consecutive_absences": 1,
+      "total_sessions": 56,
+      "sessions_attended": "44",
+      "lessons_completed": "0"
+    },
+    "s10334": {
+      "attendance_rate": 0.891,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.538,
+      "max_consecutive_absences": 1,
+      "total_sessions": 56,
+      "sessions_attended": "41",
+      "lessons_completed": "0"
+    },
+    "s10335": {
+      "attendance_rate": 0.9,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.561,
+      "max_consecutive_absences": 2,
+      "total_sessions": 26,
+      "sessions_attended": "18",
+      "lessons_completed": "0"
+    },
+    "s10336": {
+      "attendance_rate": 0.978,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.558,
+      "max_consecutive_absences": 1,
+      "total_sessions": 56,
+      "sessions_attended": "44",
+      "lessons_completed": "0"
+    },
+    "s10339": {
+      "attendance_rate": 0.804,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.614,
+      "max_consecutive_absences": 2,
+      "total_sessions": 55,
+      "sessions_attended": "37",
+      "lessons_completed": "0"
+    },
+    "s10343": {
+      "attendance_rate": 0.833,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.542,
+      "max_consecutive_absences": 1,
+      "total_sessions": 56,
+      "sessions_attended": "40",
+      "lessons_completed": "0"
+    },
+    "s10344": {
+      "attendance_rate": 0.956,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.558,
+      "max_consecutive_absences": 1,
+      "total_sessions": 56,
+      "sessions_attended": "43",
+      "lessons_completed": "0"
+    },
+    "s10359": {
+      "attendance_rate": 0.85,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.511,
+      "max_consecutive_absences": 1,
+      "total_sessions": 26,
+      "sessions_attended": "17",
+      "lessons_completed": "0"
+    },
+    "s10360": {
+      "attendance_rate": 0.844,
+      "completion_rate": 0.684,
+      "avg_sessions_to_complete": 1.5,
+      "avg_data_confidence": 0.596,
+      "max_consecutive_absences": 1,
+      "total_sessions": 53,
+      "sessions_attended": "38",
+      "lessons_completed": "26"
+    },
+    "s10361": {
+      "attendance_rate": 0.958,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.581,
+      "max_consecutive_absences": 1,
+      "total_sessions": 34,
+      "sessions_attended": "23",
+      "lessons_completed": "0"
+    },
+    "s10362": {
+      "attendance_rate": 0.955,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.537,
+      "max_consecutive_absences": 1,
+      "total_sessions": 34,
+      "sessions_attended": "21",
+      "lessons_completed": "0"
+    },
+    "s10363": {
+      "attendance_rate": 0.75,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.555,
+      "max_consecutive_absences": 1,
+      "total_sessions": 46,
+      "sessions_attended": "30",
+      "lessons_completed": "0"
+    },
+    "s10369": {
+      "attendance_rate": 0.867,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.54,
+      "max_consecutive_absences": 3,
+      "total_sessions": 57,
+      "sessions_attended": "39",
+      "lessons_completed": "0"
+    },
+    "s10445": {
+      "attendance_rate": 0.947,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.63,
+      "max_consecutive_absences": 1,
+      "total_sessions": 48,
+      "sessions_attended": "36",
+      "lessons_completed": "0"
+    },
+    "s10451": {
+      "attendance_rate": 0.83,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.584,
+      "max_consecutive_absences": 2,
+      "total_sessions": 55,
+      "sessions_attended": "39",
+      "lessons_completed": "0"
+    },
+    "s10465": {
+      "attendance_rate": 0.892,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.58,
+      "max_consecutive_absences": 2,
+      "total_sessions": 46,
+      "sessions_attended": "33",
+      "lessons_completed": "0"
+    },
+    "s10470": {
+      "attendance_rate": 0.923,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.64,
+      "max_consecutive_absences": 1,
+      "total_sessions": 48,
+      "sessions_attended": "36",
+      "lessons_completed": "0"
+    },
+    "s10471": {
+      "attendance_rate": 0.784,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.533,
+      "max_consecutive_absences": 3,
+      "total_sessions": 46,
+      "sessions_attended": "29",
+      "lessons_completed": "0"
+    },
+    "s10474": {
+      "attendance_rate": 0.722,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.357,
+      "max_consecutive_absences": 2,
+      "total_sessions": 44,
+      "sessions_attended": "13",
+      "lessons_completed": "0"
+    },
+    "s10479": {
+      "attendance_rate": 1.0,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.548,
+      "max_consecutive_absences": 0,
+      "total_sessions": 56,
+      "sessions_attended": "47",
+      "lessons_completed": "0"
+    },
+    "s10481": {
+      "attendance_rate": 0.933,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.555,
+      "max_consecutive_absences": 2,
+      "total_sessions": 57,
+      "sessions_attended": "42",
+      "lessons_completed": "0"
+    },
+    "s10482": {
+      "attendance_rate": 0.957,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.555,
+      "max_consecutive_absences": 1,
+      "total_sessions": 56,
+      "sessions_attended": "45",
+      "lessons_completed": "0"
+    },
+    "s10484": {
+      "attendance_rate": 0.936,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.546,
+      "max_consecutive_absences": 1,
+      "total_sessions": 56,
+      "sessions_attended": "44",
+      "lessons_completed": "0"
+    },
+    "s10489": {
+      "attendance_rate": 0.75,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.493,
+      "max_consecutive_absences": 2,
+      "total_sessions": 34,
+      "sessions_attended": "18",
+      "lessons_completed": "0"
+    },
+    "s10501": {
+      "attendance_rate": 0.844,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.545,
+      "max_consecutive_absences": 2,
+      "total_sessions": 57,
+      "sessions_attended": "38",
+      "lessons_completed": "0"
+    },
+    "s10514": {
+      "attendance_rate": 0.826,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.575,
+      "max_consecutive_absences": 1,
+      "total_sessions": 26,
+      "sessions_attended": "19",
+      "lessons_completed": "0"
+    },
+    "s10569": {
+      "attendance_rate": 0.978,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.595,
+      "max_consecutive_absences": 2,
+      "total_sessions": 109,
+      "sessions_attended": "87",
+      "lessons_completed": "0"
+    },
+    "s10577": {
+      "attendance_rate": 0.905,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.517,
+      "max_consecutive_absences": 1,
+      "total_sessions": 26,
+      "sessions_attended": "19",
+      "lessons_completed": "0"
+    },
+    "s10579": {
+      "attendance_rate": 0.889,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.561,
+      "max_consecutive_absences": 2,
+      "total_sessions": 57,
+      "sessions_attended": "40",
+      "lessons_completed": "0"
+    },
+    "s10587": {
+      "attendance_rate": 0.956,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.546,
+      "max_consecutive_absences": 2,
+      "total_sessions": 56,
+      "sessions_attended": "43",
+      "lessons_completed": "0"
+    },
+    "s10590": {
+      "attendance_rate": 0.822,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.539,
+      "max_consecutive_absences": 2,
+      "total_sessions": 57,
+      "sessions_attended": "37",
+      "lessons_completed": "0"
+    },
+    "s10596": {
+      "attendance_rate": 0.444,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.461,
+      "max_consecutive_absences": 5,
+      "total_sessions": 56,
+      "sessions_attended": "20",
+      "lessons_completed": "0"
+    },
+    "s10608": {
+      "attendance_rate": 0.909,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.575,
+      "max_consecutive_absences": 1,
+      "total_sessions": 26,
+      "sessions_attended": "20",
+      "lessons_completed": "0"
+    },
+    "s10609": {
+      "attendance_rate": 0.833,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.563,
+      "max_consecutive_absences": 1,
+      "total_sessions": 28,
+      "sessions_attended": "20",
+      "lessons_completed": "0"
+    },
+    "s10632": {
+      "attendance_rate": 0.789,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.565,
+      "max_consecutive_absences": 2,
+      "total_sessions": 54,
+      "sessions_attended": "30",
+      "lessons_completed": "0"
+    },
+    "s10656": {
+      "attendance_rate": 0.939,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.564,
+      "max_consecutive_absences": 1,
+      "total_sessions": 42,
+      "sessions_attended": "31",
+      "lessons_completed": "0"
+    },
+    "s10682": {
+      "attendance_rate": 0.875,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.52,
+      "max_consecutive_absences": 1,
+      "total_sessions": 23,
+      "sessions_attended": "14",
+      "lessons_completed": "0"
+    },
+    "s10683": {
+      "attendance_rate": 0.957,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.548,
+      "max_consecutive_absences": 1,
+      "total_sessions": 56,
+      "sessions_attended": "45",
+      "lessons_completed": "0"
+    },
+    "s10688": {
+      "attendance_rate": 0.886,
+      "completion_rate": 0.436,
+      "avg_sessions_to_complete": 2.3,
+      "avg_data_confidence": 0.592,
+      "max_consecutive_absences": 2,
+      "total_sessions": 108,
+      "sessions_attended": "78",
+      "lessons_completed": "34"
+    },
+    "s10692": {
+      "attendance_rate": 0.917,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.596,
+      "max_consecutive_absences": 2,
+      "total_sessions": 42,
+      "sessions_attended": "33",
+      "lessons_completed": "0"
+    },
+    "s10703": {
+      "attendance_rate": 0.886,
+      "completion_rate": 0.462,
+      "avg_sessions_to_complete": 2.2,
+      "avg_data_confidence": 0.594,
+      "max_consecutive_absences": 2,
+      "total_sessions": 108,
+      "sessions_attended": "78",
+      "lessons_completed": "36"
+    },
+    "s10704": {
+      "attendance_rate": 0.81,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.6,
+      "max_consecutive_absences": 3,
+      "total_sessions": 65,
+      "sessions_attended": "47",
+      "lessons_completed": "0"
+    },
+    "s10710": {
+      "attendance_rate": 0.867,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.507,
+      "max_consecutive_absences": 2,
+      "total_sessions": 22,
+      "sessions_attended": "13",
+      "lessons_completed": "0"
+    },
+    "s10713": {
+      "attendance_rate": 0.906,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.577,
+      "max_consecutive_absences": 1,
+      "total_sessions": 39,
+      "sessions_attended": "29",
+      "lessons_completed": "0"
+    },
+    "s10717": {
+      "attendance_rate": 0.909,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.592,
+      "max_consecutive_absences": 1,
+      "total_sessions": 39,
+      "sessions_attended": "30",
+      "lessons_completed": "0"
+    },
+    "s10723": {
+      "attendance_rate": 0.967,
+      "completion_rate": 0.828,
+      "avg_sessions_to_complete": 1.2,
+      "avg_data_confidence": 0.633,
+      "max_consecutive_absences": 1,
+      "total_sessions": 39,
+      "sessions_attended": "29",
+      "lessons_completed": "24"
+    },
+    "s10726": {
+      "attendance_rate": 0.909,
+      "completion_rate": 0.567,
+      "avg_sessions_to_complete": 1.8,
+      "avg_data_confidence": 0.615,
+      "max_consecutive_absences": 1,
+      "total_sessions": 39,
+      "sessions_attended": "30",
+      "lessons_completed": "17"
+    },
+    "s10727": {
+      "attendance_rate": 0.882,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.625,
+      "max_consecutive_absences": 1,
+      "total_sessions": 39,
+      "sessions_attended": "30",
+      "lessons_completed": "0"
+    },
+    "s10736": {
+      "attendance_rate": 0.891,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.607,
+      "max_consecutive_absences": 2,
+      "total_sessions": 55,
+      "sessions_attended": "41",
+      "lessons_completed": "0"
+    },
+    "s10749": {
+      "attendance_rate": 0.926,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.579,
+      "max_consecutive_absences": 2,
+      "total_sessions": 33,
+      "sessions_attended": "25",
+      "lessons_completed": "0"
+    },
+    "s10751": {
+      "attendance_rate": 0.84,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.445,
+      "max_consecutive_absences": 2,
+      "total_sessions": 46,
+      "sessions_attended": "21",
+      "lessons_completed": "0"
+    },
+    "s10755": {
+      "attendance_rate": 0.7,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.5,
+      "max_consecutive_absences": 2,
+      "total_sessions": 26,
+      "sessions_attended": "14",
+      "lessons_completed": "0"
+    },
+    "s10756": {
+      "attendance_rate": 0.727,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.581,
+      "max_consecutive_absences": 2,
+      "total_sessions": 65,
+      "sessions_attended": "40",
+      "lessons_completed": "0"
+    },
+    "s10762": {
+      "attendance_rate": 0.806,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.642,
+      "max_consecutive_absences": 2,
+      "total_sessions": 46,
+      "sessions_attended": "29",
+      "lessons_completed": "0"
+    },
+    "s10764": {
+      "attendance_rate": 0.769,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.514,
+      "max_consecutive_absences": 2,
+      "total_sessions": 54,
+      "sessions_attended": "30",
+      "lessons_completed": "0"
+    },
+    "s10767": {
+      "attendance_rate": 1.0,
+      "completion_rate": 0.778,
+      "avg_sessions_to_complete": 1.3,
+      "avg_data_confidence": 0.629,
+      "max_consecutive_absences": 0,
+      "total_sessions": 34,
+      "sessions_attended": "27",
+      "lessons_completed": "21"
+    },
+    "s10769": {
+      "attendance_rate": 0.824,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.53,
+      "max_consecutive_absences": 2,
+      "total_sessions": 49,
+      "sessions_attended": "28",
+      "lessons_completed": "0"
+    },
+    "s10777": {
+      "attendance_rate": 0.778,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.526,
+      "max_consecutive_absences": 2,
+      "total_sessions": 23,
+      "sessions_attended": "14",
+      "lessons_completed": "0"
+    },
+    "s10779": {
+      "attendance_rate": 0.804,
+      "completion_rate": 0.784,
+      "avg_sessions_to_complete": 1.3,
+      "avg_data_confidence": 0.61,
+      "max_consecutive_absences": 5,
+      "total_sessions": 56,
+      "sessions_attended": "37",
+      "lessons_completed": "29"
+    },
+    "s10785": {
+      "attendance_rate": 0.6,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.506,
+      "max_consecutive_absences": 5,
+      "total_sessions": 41,
+      "sessions_attended": "21",
+      "lessons_completed": "0"
+    },
+    "s10786": {
+      "attendance_rate": 0.824,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.682,
+      "max_consecutive_absences": 2,
+      "total_sessions": 41,
+      "sessions_attended": "28",
+      "lessons_completed": "0"
+    },
+    "s10787": {
+      "attendance_rate": 0.8,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.597,
+      "max_consecutive_absences": 2,
+      "total_sessions": 39,
+      "sessions_attended": "24",
+      "lessons_completed": "0"
+    },
+    "s10788": {
+      "attendance_rate": 0.7,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.553,
+      "max_consecutive_absences": 2,
+      "total_sessions": 39,
+      "sessions_attended": "21",
+      "lessons_completed": "0"
+    },
+    "s10789": {
+      "attendance_rate": 0.926,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.568,
+      "max_consecutive_absences": 1,
+      "total_sessions": 37,
+      "sessions_attended": "25",
+      "lessons_completed": "0"
+    },
+    "s10790": {
+      "attendance_rate": 0.808,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.546,
+      "max_consecutive_absences": 2,
+      "total_sessions": 34,
+      "sessions_attended": "21",
+      "lessons_completed": "0"
+    },
+    "s10791": {
+      "attendance_rate": 0.852,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.606,
+      "max_consecutive_absences": 1,
+      "total_sessions": 32,
+      "sessions_attended": "23",
+      "lessons_completed": "0"
+    },
+    "s10792": {
+      "attendance_rate": 0.636,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.48,
+      "max_consecutive_absences": 3,
+      "total_sessions": 30,
+      "sessions_attended": "14",
+      "lessons_completed": "0"
+    },
+    "s10793": {
+      "attendance_rate": 0.87,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.606,
+      "max_consecutive_absences": 1,
+      "total_sessions": 30,
+      "sessions_attended": "20",
+      "lessons_completed": "0"
+    },
+    "s10794": {
+      "attendance_rate": 1.0,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.699,
+      "max_consecutive_absences": 0,
+      "total_sessions": 29,
+      "sessions_attended": "23",
+      "lessons_completed": "0"
+    },
+    "s10795": {
+      "attendance_rate": 0.826,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.625,
+      "max_consecutive_absences": 1,
+      "total_sessions": 29,
+      "sessions_attended": "19",
+      "lessons_completed": "0"
+    },
+    "s10796": {
+      "attendance_rate": 0.857,
+      "completion_rate": 0.222,
+      "avg_sessions_to_complete": 4.5,
+      "avg_data_confidence": 0.58,
+      "max_consecutive_absences": 2,
+      "total_sessions": 58,
+      "sessions_attended": "36",
+      "lessons_completed": "8"
+    },
+    "s10798": {
+      "attendance_rate": 0.944,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.641,
+      "max_consecutive_absences": 1,
+      "total_sessions": 23,
+      "sessions_attended": "17",
+      "lessons_completed": "0"
+    },
+    "s10799": {
+      "attendance_rate": 0.8,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.622,
+      "max_consecutive_absences": 1,
+      "total_sessions": 24,
+      "sessions_attended": "16",
+      "lessons_completed": "0"
+    },
+    "s10804": {
+      "attendance_rate": 0.923,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.455,
+      "max_consecutive_absences": 1,
+      "total_sessions": 22,
+      "sessions_attended": "12",
+      "lessons_completed": "0"
+    },
+    "s10805": {
+      "attendance_rate": 0.917,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.418,
+      "max_consecutive_absences": 1,
+      "total_sessions": 22,
+      "sessions_attended": "11",
+      "lessons_completed": "0"
+    },
+    "s10808": {
+      "attendance_rate": 0.667,
+      "completion_rate": 0.5,
+      "avg_sessions_to_complete": 2.0,
+      "avg_data_confidence": 0.593,
+      "max_consecutive_absences": 1,
+      "total_sessions": 7,
+      "sessions_attended": "2",
+      "lessons_completed": "1"
+    },
+    "s10810": {
+      "attendance_rate": 0.667,
+      "completion_rate": 0.0,
+      "avg_sessions_to_complete": 0,
+      "avg_data_confidence": 0.4,
+      "max_consecutive_absences": 1,
+      "total_sessions": 6,
+      "sessions_attended": "2",
+      "lessons_completed": "0"
+    }
+  },
+  "teacher_metrics": {
+    "Khairina": {
+      "students_taught": 19,
+      "total_sessions": 403,
+      "completion_rate": 0.086,
+      "progress_score": 0.347,
+      "avg_data_confidence": 0.711,
+      "sessions_completed": "32"
+    },
+    "Aisyah": {
+      "students_taught": 34,
+      "total_sessions": 386,
+      "completion_rate": 0.0,
+      "progress_score": 0.053,
+      "avg_data_confidence": 0.485,
+      "sessions_completed": "0"
+    },
+    "Afiqah": {
+      "students_taught": 12,
+      "total_sessions": 68,
+      "completion_rate": 0.147,
+      "progress_score": 0.537,
+      "avg_data_confidence": 0.652,
+      "sessions_completed": "10"
+    },
+    "Arrvinna": {
+      "students_taught": 4,
+      "total_sessions": 75,
+      "completion_rate": 0.0,
+      "progress_score": 0.053,
+      "avg_data_confidence": 0.565,
+      "sessions_completed": "0"
+    },
+    "Syahin": {
+      "students_taught": 8,
+      "total_sessions": 74,
+      "completion_rate": 0.58,
+      "progress_score": 0.514,
+      "avg_data_confidence": 0.623,
+      "sessions_completed": "29"
+    },
+    "Yasmin": {
+      "students_taught": 31,
+      "total_sessions": 951,
+      "completion_rate": 0.0,
+      "progress_score": 0.148,
+      "avg_data_confidence": 0.546,
+      "sessions_completed": "0"
+    },
+    "Han Yang": {
+      "students_taught": 15,
+      "total_sessions": 797,
+      "completion_rate": 0.207,
+      "progress_score": 0.213,
+      "avg_data_confidence": 0.563,
+      "sessions_completed": "106"
+    },
+    "Choy Yein": {
+      "students_taught": 5,
+      "total_sessions": 59,
+      "completion_rate": 0.102,
+      "progress_score": 0.458,
+      "avg_data_confidence": 0.65,
+      "sessions_completed": "6"
+    },
+    "Fatiha": {
+      "students_taught": 7,
+      "total_sessions": 11,
+      "completion_rate": 0.182,
+      "progress_score": 0.591,
+      "avg_data_confidence": 0.65,
+      "sessions_completed": "2"
+    },
+    "Yong Sheng": {
+      "students_taught": 13,
+      "total_sessions": 30,
+      "completion_rate": 0.067,
+      "progress_score": 0.5,
+      "avg_data_confidence": 0.65,
+      "sessions_completed": "2"
+    },
+    "Puvin": {
+      "students_taught": 24,
+      "total_sessions": 196,
+      "completion_rate": 0.005,
+      "progress_score": 0.26,
+      "avg_data_confidence": 0.684,
+      "sessions_completed": "1"
+    },
+    "Anisha": {
+      "students_taught": 5,
+      "total_sessions": 25,
+      "completion_rate": 0.16,
+      "progress_score": 0.58,
+      "avg_data_confidence": 0.65,
+      "sessions_completed": "4"
+    },
+    "Rahmat": {
+      "students_taught": 25,
+      "total_sessions": 547,
+      "completion_rate": 0.0,
+      "progress_score": 0.08,
+      "avg_data_confidence": 0.513,
+      "sessions_completed": "0"
+    },
+    "Farah": {
+      "students_taught": 13,
+      "total_sessions": 46,
+      "completion_rate": 0.0,
+      "progress_score": 0.413,
+      "avg_data_confidence": 0.65,
+      "sessions_completed": "0"
+    },
+    "Fatin": {
+      "students_taught": 5,
+      "total_sessions": 5,
+      "completion_rate": 0.0,
+      "progress_score": 0.0,
+      "avg_data_confidence": 0.72,
+      "sessions_completed": "0"
+    },
+    "Soumiya": {
+      "students_taught": 26,
+      "total_sessions": 456,
+      "completion_rate": 0.226,
+      "progress_score": 0.282,
+      "avg_data_confidence": 0.549,
+      "sessions_completed": "65"
+    },
+    "Hafiz": {
+      "students_taught": 14,
+      "total_sessions": 90,
+      "completion_rate": 0.0,
+      "progress_score": 0.2,
+      "avg_data_confidence": 0.549,
+      "sessions_completed": "0"
+    },
+    "Nurafrina": {
+      "students_taught": 12,
+      "total_sessions": 203,
+      "completion_rate": 0.0,
+      "progress_score": 0.131,
+      "avg_data_confidence": 0.58,
+      "sessions_completed": "0"
+    },
+    "Hong Yi": {
+      "students_taught": 7,
+      "total_sessions": 12,
+      "completion_rate": 0.0,
+      "progress_score": 0.5,
+      "avg_data_confidence": 0.65,
+      "sessions_completed": "0"
+    },
+    "Amirul": {
+      "students_taught": 2,
+      "total_sessions": 3,
+      "completion_rate": 0.0,
+      "progress_score": 0.5,
+      "avg_data_confidence": 0.65,
+      "sessions_completed": "0"
+    },
+    "Mardhiah": {
+      "students_taught": 4,
+      "total_sessions": 75,
+      "completion_rate": 0.0,
+      "progress_score": 0.087,
+      "avg_data_confidence": 0.561,
+      "sessions_completed": "0"
+    },
+    "Theyvii": {
+      "students_taught": 1,
+      "total_sessions": 3,
+      "completion_rate": 0.0,
+      "progress_score": 0.333,
+      "avg_data_confidence": 0.65,
+      "sessions_completed": "0"
+    },
+    "Aaron": {
+      "students_taught": 3,
+      "total_sessions": 10,
+      "completion_rate": 0.0,
+      "progress_score": 0.3,
+      "avg_data_confidence": 0.65,
+      "sessions_completed": "0"
+    }
+  },
+  "program_metrics": {
+    "BBD": {
+      "total_students": 4,
+      "total_sessions": 163,
+      "attendance_rate": 0.904,
+      "lessons_completed": "32",
+      "lessons_in_progress": "51",
+      "avg_sessions_per_student": 40.8,
+      "completion_percentage": 19.6
+    },
+    "AI-2": {
+      "total_students": 29,
+      "total_sessions": 1551,
+      "attendance_rate": 0.859,
+      "lessons_completed": "29",
+      "lessons_in_progress": "518",
+      "avg_sessions_per_student": 53.5,
+      "completion_percentage": 1.9
+    },
+    "AI-1": {
+      "total_students": 9,
+      "total_sessions": 412,
+      "attendance_rate": 0.836,
+      "lessons_completed": "0",
+      "lessons_in_progress": "157",
+      "avg_sessions_per_student": 45.8,
+      "completion_percentage": 0.0
+    },
+    "W-3": {
+      "total_students": 19,
+      "total_sessions": 910,
+      "attendance_rate": 0.897,
+      "lessons_completed": "0",
+      "lessons_in_progress": "209",
+      "avg_sessions_per_student": 47.9,
+      "completion_percentage": 0.0
+    },
+    "W-2": {
+      "total_students": 7,
+      "total_sessions": 327,
+      "attendance_rate": 0.827,
+      "lessons_completed": "76",
+      "lessons_in_progress": "71",
+      "avg_sessions_per_student": 46.7,
+      "completion_percentage": 23.2
+    },
+    "BBP": {
+      "total_students": 13,
+      "total_sessions": 646,
+      "attendance_rate": 0.876,
+      "lessons_completed": "111",
+      "lessons_in_progress": "146",
+      "avg_sessions_per_student": 49.7,
+      "completion_percentage": 17.2
+    },
+    "W-1": {
+      "total_students": 5,
+      "total_sessions": 166,
+      "attendance_rate": 0.82,
+      "lessons_completed": "9",
+      "lessons_in_progress": "63",
+      "avg_sessions_per_student": 33.2,
+      "completion_percentage": 5.4
+    },
+    "FD-2": {
+      "total_students": 4,
+      "total_sessions": 147,
+      "attendance_rate": 0.798,
+      "lessons_completed": "0",
+      "lessons_in_progress": "44",
+      "avg_sessions_per_student": 36.8,
+      "completion_percentage": 0.0
+    },
+    "JC": {
+      "total_students": 4,
+      "total_sessions": 123,
+      "attendance_rate": 0.86,
+      "lessons_completed": "0",
+      "lessons_in_progress": "36",
+      "avg_sessions_per_student": 30.8,
+      "completion_percentage": 0.0
+    },
+    "FD-1": {
+      "total_students": 3,
+      "total_sessions": 74,
+      "attendance_rate": 0.896,
+      "lessons_completed": "0",
+      "lessons_in_progress": "24",
+      "avg_sessions_per_student": 24.7,
+      "completion_percentage": 0.0
+    },
+    "BBW": {
+      "total_students": 1,
+      "total_sessions": 6,
+      "attendance_rate": 0.667,
+      "lessons_completed": "0",
+      "lessons_in_progress": "2",
+      "avg_sessions_per_student": 6.0,
+      "completion_percentage": 0.0
+    }
+  },
+  "risk_flags": [
+    {
+      "student_id": "s10219",
+      "risk_score": 8,
+      "risk_level": "HIGH",
+      "reasons": [
+        "4 consecutive absences",
+        "18 incomplete lessons",
+        "3/5 recent absences",
+        "Low data quality (0.50)"
+      ],
+      "last_attendance": "2025-08-09"
+    },
+    {
+      "student_id": "s10596",
+      "risk_score": 6,
+      "risk_level": "HIGH",
+      "reasons": [
+        "5 consecutive absences",
+        "11 incomplete lessons",
+        "Low data quality (0.46)"
+      ],
+      "last_attendance": "2025-08-02"
+    },
+    {
+      "student_id": "s10792",
+      "risk_score": 6,
+      "risk_level": "HIGH",
+      "reasons": [
+        "3 consecutive absences",
+        "14 incomplete lessons",
+        "Low data quality (0.48)"
+      ],
+      "last_attendance": "2025-08-03"
+    },
+    {
+      "student_id": "s10154",
+      "risk_score": 5,
+      "risk_level": "HIGH",
+      "reasons": [
+        "4 consecutive absences",
+        "22 incomplete lessons"
+      ],
+      "last_attendance": "2025-08-03"
+    },
+    {
+      "student_id": "s10160",
+      "risk_score": 5,
+      "risk_level": "HIGH",
+      "reasons": [
+        "3 consecutive absences",
+        "18 incomplete lessons"
+      ],
+      "last_attendance": "2025-08-03"
+    },
+    {
+      "student_id": "s10213",
+      "risk_score": 5,
+      "risk_level": "HIGH",
+      "reasons": [
+        "4 consecutive absences",
+        "18 incomplete lessons"
+      ],
+      "last_attendance": "2025-08-09"
+    },
+    {
+      "student_id": "s10369",
+      "risk_score": 5,
+      "risk_level": "HIGH",
+      "reasons": [
+        "3 consecutive absences",
+        "11 incomplete lessons"
+      ],
+      "last_attendance": "2025-08-02"
+    },
+    {
+      "student_id": "s10471",
+      "risk_score": 5,
+      "risk_level": "HIGH",
+      "reasons": [
+        "3 consecutive absences",
+        "18 incomplete lessons"
+      ],
+      "last_attendance": "2025-08-03"
+    },
+    {
+      "student_id": "s10704",
+      "risk_score": 5,
+      "risk_level": "HIGH",
+      "reasons": [
+        "3 consecutive absences",
+        "10 incomplete lessons"
+      ],
+      "last_attendance": "2025-08-03"
+    },
+    {
+      "student_id": "s10779",
+      "risk_score": 5,
+      "risk_level": "HIGH",
+      "reasons": [
+        "5 consecutive absences",
+        "13 incomplete lessons"
+      ],
+      "last_attendance": "2025-08-02"
+    },
+    {
+      "student_id": "s10785",
+      "risk_score": 5,
+      "risk_level": "HIGH",
+      "reasons": [
+        "5 consecutive absences",
+        "12 incomplete lessons"
+      ],
+      "last_attendance": "2025-08-03"
+    },
+    {
+      "student_id": "s10474",
+      "risk_score": 3,
+      "risk_level": "MEDIUM",
+      "reasons": [
+        "12 incomplete lessons",
+        "Low data quality (0.36)"
+      ],
+      "last_attendance": "2025-08-03"
+    },
+    {
+      "student_id": "s10489",
+      "risk_score": 3,
+      "risk_level": "MEDIUM",
+      "reasons": [
+        "11 incomplete lessons",
+        "Low data quality (0.49)"
+      ],
+      "last_attendance": "2025-08-02"
+    },
+    {
+      "student_id": "s10751",
+      "risk_score": 3,
+      "risk_level": "MEDIUM",
+      "reasons": [
+        "20 incomplete lessons",
+        "Low data quality (0.44)"
+      ],
+      "last_attendance": "2025-08-02"
+    },
+    {
+      "student_id": "s10804",
+      "risk_score": 3,
+      "risk_level": "MEDIUM",
+      "reasons": [
+        "8 incomplete lessons",
+        "Low data quality (0.45)"
+      ],
+      "last_attendance": "2025-08-03"
+    },
+    {
+      "student_id": "s10805",
+      "risk_score": 3,
+      "risk_level": "MEDIUM",
+      "reasons": [
+        "8 incomplete lessons",
+        "Low data quality (0.42)"
+      ],
+      "last_attendance": "2025-08-03"
+    }
+  ],
+  "quality_metrics": {
+    "total_records": 4525,
+    "high_confidence": "274",
+    "medium_confidence": "2750",
+    "low_confidence": "1501",
+    "avg_confidence": 0.5707182320441989,
+    "lessons_with_topics": "3024",
+    "topic_coverage": 66.82872928176795,
+    "complete_records": "3024",
+    "quality_score": 0.5550939226519337
+  },
+  "temporal_metrics": {
+    "attendance_trend": "improving",
+    "recent_attendance_rate": 0.43953488372093025,
+    "active_students_30d": 97,
+    "sessions_last_7d": 7,
+    "weekly_avg": 45.77312138728323
+  }
+}

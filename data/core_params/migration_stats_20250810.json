@@ -1,0 +1,64 @@
+{
+  "original": {
+    "file": "data/vertical_csv/telebort_auto_corrected_20250807_100650.csv",
+    "records": 4525,
+    "parameters": 24,
+    "columns": [
+      "Student_ID",
+      "Student_Name",
+      "Program",
+      "Course_Code",
+      "Session_Date",
+      "Session_Number",
+      "Lesson_ID",
+      "Lesson_Type",
+      "Lesson_Topic_Standard",
+      "Lesson_Topic_Original",
+      "Attendance",
+      "Attendance_Normalized",
+      "Progress",
+      "Progress_Inferred",
+      "Session_Teacher",
+      "Primary_Teacher",
+      "Duration_Min",
+      "Schedule_Day",
+      "Schedule_Time",
+      "Lesson_Links",
+      "Data_Enhancement",
+      "Inference_Method",
+      "Inference_Confidence",
+      "Inference_Status"
+    ],
+    "file_size_kb": 811.525390625
+  },
+  "consolidated": {
+    "file": "data/core_params/telebort_core_params_20250809.csv",
+    "records": 4525,
+    "parameters": 10,
+    "columns": [
+      "student_id",
+      "primary_teacher",
+      "session_teacher",
+      "lesson_topic",
+      "progress_status",
+      "session_date",
+      "session_sequence",
+      "program_code",
+      "attendance_status",
+      "data_confidence"
+    ],
+    "file_size_kb": 370.7822265625
+  },
+  "reduction": {
+    "parameters": 14,
+    "percentage": 58.333333333333336,
+    "file_size_reduction": 0.5431045893993035,
+    "complexity_reduction": 58.3
+  },
+  "quality": {
+    "high_confidence": "274",
+    "medium_confidence": "2750",
+    "low_confidence": "1501",
+    "avg_confidence": 0.5707182320441989
+  }
+}
